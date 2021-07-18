@@ -1,0 +1,15 @@
+<mat-list role="list">
+   <mat-list-item role='listitem' *ngFor="let instrument of instruments">
+    <mat-card class="current-instrument-card">
+        <img mat-card-image [src]="instrument.imgPath" alt="Instrument Image">
+        <mat-card-content>
+            <p class="current-instrument-name">{{instrument.name}}</p>
+            <p class="current-instrument-description">{{instrument.description}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button (click)="addToCart(instrument._id)">Add to cart</button>
+            <button mat-button (click)="like(instrument._id)">Like</button>
+          </mat-card-actions>
+    </mat-card>
+   </mat-list-item>
+  </mat-list>

@@ -1,0 +1,28 @@
+<mat-toolbar>
+    
+    <span>My App</span>
+    <span class="app-name"></span>
+
+    <button mat-button [matMenuTriggerFor]="categories">Categories</button>
+    <mat-menu #categories="matMenu">
+      <button (click)="getAllGuitars()" mat-menu-item>Guitars</button>
+      <button (click)="getAllDrums()" mat-menu-item>Drums</button>
+      <button (click)="getAllKeys()" mat-menu-item>Keys</button>
+      <button (click)="getAllDJGear()" mat-menu-item>DJ Gear</button>
+      <button (click)="getAllAccessories()" mat-menu-item>Accessories</button>
+    </mat-menu>
+
+    <button mat-button [matMenuTriggerFor]="brands">Brands</button>
+    <mat-menu #brands="matMenu">
+      <button mat-menu-item>Fender</button>
+      <button mat-menu-item>Gibson</button>
+      <button mat-menu-item>Taylor</button>
+      <button mat-menu-item>Roland</button>
+      <button mat-menu-item>Yamaha</button>
+      <button mat-menu-item>DW</button>
+      <button mat-menu-item>Roland</button>
+      <button mat-menu-item>Casio</button>
+    </mat-menu>
+    
+  </mat-toolbar>
+  
