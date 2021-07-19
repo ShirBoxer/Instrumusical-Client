@@ -1,6 +1,4 @@
-<mat-card class="instrument-mat-card">
+<mat-card *ngIf="instrument != undefined">
     <img mat-card-image [src]="instrument.imgPath" alt="Instrument image">
-    <mat-card-content>
-     <p>{{instrument.description}}</p>   
-    </mat-card-content>
+    <mat-card-content>{{instrument.description}}</mat-card-content>
 </mat-card>

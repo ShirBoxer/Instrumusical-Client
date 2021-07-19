@@ -6,6 +6,10 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatFormFieldModule } from '@angular/material/form-field'
+
+
 
 
 const materialModules = [MatToolbarModule,
@@ -13,7 +17,9 @@ const materialModules = [MatToolbarModule,
   MatMenuModule,
   MatListModule,
   MatCardModule,
-  MatGridListModule
+  MatGridListModule,
+  MatExpansionModule,
+  MatFormFieldModule
 ];
 
 @NgModule({

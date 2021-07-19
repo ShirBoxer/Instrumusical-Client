@@ -19,6 +19,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { MainHeaderComponent } from './components/main-header/main-header.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
 import { InstrumentCardComponent } from './components/instrument-card/instrument-card.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { MatDialog } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 
 @NgModule({
@@ -29,16 +34,20 @@ import { InstrumentCardComponent } from './components/instrument-card/instrument
     MainGridComponent,
     MainHeaderComponent,
     UserCardComponent,
-    InstrumentCardComponent
+    InstrumentCardComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialsModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    MatDialogModule
   ],
   providers: [
-     InstrumentService
+     InstrumentService,
+     MatDialog
      ],
   bootstrap: [AppComponent]
 })

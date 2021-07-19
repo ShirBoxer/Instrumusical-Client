@@ -15,7 +15,7 @@ export class InstrumentService {
   constructor(private http: HttpClient) { }
 
   getAllGuitars(): Observable<Instrument[]>{
-    let url = this.instrumentsUrl + '/' + this.guitar;
+    let url = this.instrumentsUrl;// + '/' + this.guitar;
     return this.http.get<Instrument[]>(url);
   }
 }

@@ -8,21 +8,11 @@ import { Instrument } from 'src/app/models/instrument';
 })
 export class InstrumentCardComponent implements OnInit {
 
-  @Input() instrument: Instrument ={
-    _id: 1,
-  name: "A",
-  brand: "A",
-  category: "A",
-  title: "A",
-  imgPath: "A",
-  description: "A",
-  reviews: ["A","A","A"],
-  quantity: 1,
-  price: 1
-  };
+  @Input()  instrument: Instrument | undefined;
 
 
-  constructor() { }
+  constructor() { 
+  }
 
   ngOnInit(): void {
   

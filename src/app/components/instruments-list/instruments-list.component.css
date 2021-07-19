@@ -1,0 +1,8 @@
+mat-accordion{
+    background-color:aqua;
+    width: 100%;
+}
+
+mat-expansion-panel{
+    width: 50%;
+}

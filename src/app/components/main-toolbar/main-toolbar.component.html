@@ -6,10 +6,10 @@
     <button mat-button [matMenuTriggerFor]="categories">Categories</button>
     <mat-menu #categories="matMenu">
       <button (click)="getAllGuitars()" mat-menu-item>Guitars</button>
-      <button (click)="getAllDrums()" mat-menu-item>Drums</button>
-      <button (click)="getAllKeys()" mat-menu-item>Keys</button>
-      <button (click)="getAllDJGear()" mat-menu-item>DJ Gear</button>
-      <button (click)="getAllAccessories()" mat-menu-item>Accessories</button>
+      <button  mat-menu-item>Drums</button>
+      <button  mat-menu-item>Keys</button>
+      <button  mat-menu-item>DJ Gear</button>
+      <button  mat-menu-item>Accessories</button>
     </mat-menu>
 
     <button mat-button [matMenuTriggerFor]="brands">Brands</button>
@@ -23,6 +23,10 @@
       <button mat-menu-item>Roland</button>
       <button mat-menu-item>Casio</button>
     </mat-menu>
+    
+    <button mat-button (click)="register()">Register</button>
+    <button mat-button (click)="logIn()">Login</button>
+
     
   </mat-toolbar>
   

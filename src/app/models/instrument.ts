@@ -8,5 +8,6 @@ export interface Instrument{
     description: string,
     reviews: string[],
     quantity: number,
-    price: number
+    price: number,
+    sold: number
 }

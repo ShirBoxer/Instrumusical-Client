@@ -1,4 +1,4 @@
-<app-main-toolbar (onServerResponse)="fillList()"></app-main-toolbar>
+<app-main-toolbar (instruemntsListResponse)="signInstruments($event)"></app-main-toolbar>
 <app-main-header></app-main-header>
-<app-main-grid></app-main-grid>
-<app-instruments-list></app-instruments-list>
+<app-instruments-list *ngIf="currentStatus == 1" [instruments]="instruments"></app-instruments-list>
+<app-main-grid *ngIf="currentStatus == 0" ></app-main-grid>

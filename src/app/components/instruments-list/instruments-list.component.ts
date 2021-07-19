@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Instrument } from 'src/app/models/instrument';
 
 @Component({
@@ -7,17 +7,15 @@ import { Instrument } from 'src/app/models/instrument';
   styleUrls: ['./instruments-list.component.css']
 })
 export class InstrumentsListComponent implements OnInit {
-  instruments: Instrument[] = [];
+ @Input() instruments : Instrument[] = [];
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  addToCart(id: any){
-    alert(`addToCart -> ${id}`);
+  fillList(instrumentsList : Instrument[]){
+    this.instruments = instrumentsList;
+    alert("fillList() in instrument-list component");
   }
 
-  like(id: any){
-    alert(`like -> ${id}`);
-  }
 }
