@@ -1,0 +1,15 @@
+<mat-accordion  multi  *ngIf="instruments && instruments.length > 0" >
+    <mat-expansion-panel *ngFor="let obj of instruments">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{obj.name}}
+            </mat-panel-title>
+            <mat-panel-description>
+                {{obj.brand}}
+            </mat-panel-description>   
+        </mat-expansion-panel-header> 
+    <app-instrument-card [instrument]="obj" ></app-instrument-card>  
+    </mat-expansion-panel>
+
+
+</mat-accordion>
