@@ -9,5 +9,16 @@ export class CartService {
 
   constructor() { }
 
-  
+  addToCart(instrument: Instrument){
+    this.cartItems.push(instrument);
+  }
+
+  getItems(){
+    return this.cartItems;
+  }
+
+  clearCart(){
+    this.cartItems = [];
+    return this.cartItems;
+  }
 }

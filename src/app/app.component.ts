@@ -6,7 +6,8 @@ import { User } from './models/user';
 
 enum status {
   main = 0,
-  instrumentList = 1
+  instrumentList = 1,
+  cart = 2
 };
 
 @Component({
@@ -40,4 +41,7 @@ export class AppComponent {
     this.currentStatus = status.instrumentList;
   }
 
+  cartNav(){
+    this.currentStatus = status.cart;
+  }
 }
