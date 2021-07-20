@@ -1,0 +1,10 @@
+#dialogContainer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#dialogActions{
+    display: flex;
+    flex-direction: row;
+}

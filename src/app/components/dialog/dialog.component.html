@@ -1,5 +1,13 @@
-<input type="email" placeholder="email">
-<input type="password" placeholder="password">
-<input type="number" placeholder="phone number">
 
-<button >Submit</button>
+<div id="dialogContainer">
+    <h2 mat-dialog-title>Login</h2>
+    <mat-dialog-content>
+        content here
+    </mat-dialog-content>
+    <div #dialogActions>
+        <mat-dialog-actions>
+            <button mat-raised-button mat-dialog-close="submit">Submit</button>
+            <button mat-raised-button mat-dialog-close="cancel">Cancel</button>
+        </mat-dialog-actions>
+    </div>
+</div>

@@ -21,8 +21,6 @@ import { UserCardComponent } from './components/user-card/user-card.component';
 import { InstrumentCardComponent } from './components/instrument-card/instrument-card.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { MatDialog } from '@angular/material/dialog';
-import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { CartComponent } from './components/cart/cart.component';
 
@@ -44,12 +42,10 @@ import { CartComponent } from './components/cart/cart.component';
     BrowserAnimationsModule,
     MaterialsModule,
     HttpClientModule,
-    ReactiveFormsModule,
-    MatDialogModule
+    ReactiveFormsModule
   ],
   providers: [
-     InstrumentService,
-     MatDialog
+     InstrumentService
      ],
   bootstrap: [AppComponent]
 })

@@ -8,8 +8,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field'
-
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 
 const materialModules = [MatToolbarModule,
@@ -19,7 +19,9 @@ const materialModules = [MatToolbarModule,
   MatCardModule,
   MatGridListModule,
   MatExpansionModule,
-  MatFormFieldModule
+  MatFormFieldModule,
+  MatDialogModule,
+  MatButtonModule
 ];
 
 @NgModule({
