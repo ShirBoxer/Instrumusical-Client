@@ -1,15 +1,5 @@
-<mat-accordion  multi>
-    <mat-expansion-panel *ngFor="let obj of instruments">
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                {{obj.name}}
-            </mat-panel-title>
-            <mat-panel-description>
-                {{obj.brand}}
-            </mat-panel-description>   
-        </mat-expansion-panel-header> 
-    <app-instrument-card [instrument]="obj" ></app-instrument-card>  
-    </mat-expansion-panel>
-
-
-</mat-accordion>
+<mat-grid-list cols="3" gutterSize="15px" rowHeight="650px">
+  <mat-grid-tile colspan="1" *ngFor="let obj of instruments">
+      <app-instrument-card [instrument]="obj"></app-instrument-card>
+    </mat-grid-tile>
+</mat-grid-list>

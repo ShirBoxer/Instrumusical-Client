@@ -1,8 +1,9 @@
-<mat-card *ngIf="instrument">
-    <img mat-card-image [src]="instrument.imgPath" alt="Instrument image">
-    <h3>{{instrument.brand}}</h3>
-    <mat-card-content>{{instrument.description}}</mat-card-content>
-    <h5>{{instrument.price}}</h5>
-    <button mat-flat-button color="primary" (click)="addToCart(instrument)">Add To Cart</button>
+<div class="card" *ngIf="instrument">
+    <img [src]=instrument.imgPath alt="Instrument Image" height="350px" width="100%" >
+    <h1>{{instrument.name}}</h1>
+    <h2>{{instrument.brand}}</h2>
+    <p class="price">${{instrument.price}}</p>
+    <p>{{instrument.description}}</p>
+    <p><button mat-flat-button color="primary" (click)="addToCart(instrument)">Add to Cart</button></p>
+</div>
 
-</mat-card>
