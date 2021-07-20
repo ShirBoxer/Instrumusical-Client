@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { CartService } from 'src/app/services/cart.service';
 import { InstrumentService } from 'src/app/services/instrument.service';
 import { Instrument } from '../../models/instrument'
 import { DialogComponent } from '../dialog/dialog.component';
@@ -10,7 +11,9 @@ import { DialogComponent } from '../dialog/dialog.component';
   styleUrls: ['./main-toolbar.component.css']
 })
 export class MainToolbarComponent implements OnInit {
+
   @Output() instruemntsListResponse = new EventEmitter();
+  @Output() cartNavigation = new EventEmitter();
   
   constructor(private instrumentService: InstrumentService,
               public dialog: MatDialog) {
@@ -40,5 +43,9 @@ export class MainToolbarComponent implements OnInit {
         console.log(`Dialog result: ${result}`);
       });
     
+  }
+
+  goToCart(){
+    this.cartNavigation.emit();
   }
 }

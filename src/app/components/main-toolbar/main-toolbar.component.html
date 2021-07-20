@@ -1,31 +1,45 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 <mat-toolbar>
-    
-    <span>My App</span>
+    <img src="assets/img/logo.png" alt="logoGuitar">
+    <span class="title-txt" >Instrumusical</span>
     <span class="app-name"></span>
 
-    <button mat-button [matMenuTriggerFor]="categories">Categories</button>
+    <button mat-button class="btn" [matMenuTriggerFor]="categories">Categories</button>
     <mat-menu #categories="matMenu">
-      <button (click)="getAllGuitars()" mat-menu-item>Guitars</button>
-      <button  mat-menu-item>Drums</button>
-      <button  mat-menu-item>Keys</button>
-      <button  mat-menu-item>DJ Gear</button>
-      <button  mat-menu-item>Accessories</button>
+      <button mat-menu-item class="inner-btn" (click)="getAllGuitars()">Guitars</button>
+      <button mat-menu-item class="inner-btn" >Drums</button>
+      <button mat-menu-item class="inner-btn" >Keys</button>
+      <button mat-menu-item class="inner-btn" >DJ Gear</button>
+      <button mat-menu-item class="inner-btn" >Accessories</button>
     </mat-menu>
 
-    <button mat-button [matMenuTriggerFor]="brands">Brands</button>
+    <button mat-button  class="btn"[matMenuTriggerFor]="brands">Brands</button>
     <mat-menu #brands="matMenu">
-      <button mat-menu-item>Fender</button>
-      <button mat-menu-item>Gibson</button>
-      <button mat-menu-item>Taylor</button>
-      <button mat-menu-item>Roland</button>
-      <button mat-menu-item>Yamaha</button>
-      <button mat-menu-item>DW</button>
-      <button mat-menu-item>Roland</button>
-      <button mat-menu-item>Casio</button>
+      <button class="inner-btn" mat-menu-item>Fender</button>
+      <button class="inner-btn" mat-menu-item>Gibson</button>
+      <button class="inner-btn" mat-menu-item>Taylor</button>
+      <button class="inner-btn" mat-menu-item>Roland</button>
+      <button class="inner-btn" mat-menu-item>Yamaha</button>
+      <button class="inner-btn" mat-menu-item>DW</button>
+      <button class="inner-btn" mat-menu-item>Roland</button>
+      <button class="inner-btn" mat-menu-item>Casio</button>
     </mat-menu>
+
+    <span class="spacer"></span>
+
+
+    <!-- The form -->
+    <form class="search">
+      <input type="text" placeholder="Search.." name="search" size ="20px">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+    <button mat-button class="btn rightBtn" (click)="goToCart()">Cart</button>
+    <button mat-button class="btn rightBtn" (click)="register()">Register</button>
+    <button mat-button class="btn rightBtn" (click)="logIn()">Login</button>
+   
     
-    <button mat-button (click)="register()">Register</button>
-    <button mat-button (click)="logIn()">Login</button>
 
     
   </mat-toolbar>

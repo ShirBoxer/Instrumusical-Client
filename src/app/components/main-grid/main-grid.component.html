@@ -1,5 +1,5 @@
 
-<mat-grid-list *ngIf="topSellersInstruments" cols="12">
+<mat-grid-list *ngIf="topSellersInstruments && topSellersInstruments.length == 4" cols="12">
 
     <mat-grid-tile  rowspan="4" colspan="5">
         <img [src]="topSellersInstruments[0].imgPath">

@@ -24,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { CartComponent } from './components/cart/cart.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { DialogComponent } from './components/dialog/dialog.component';
     MainHeaderComponent,
     UserCardComponent,
     InstrumentCardComponent,
-    DialogComponent
+    DialogComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

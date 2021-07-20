@@ -1,4 +1,95 @@
-.example-spacer {
+mat-toolbar{
+  background-color: #000;
+}
+
+.spacer {
     flex: 1 1 auto;
-  }
+}
   
+.right-buttons{
+  justify-content: right;
+}
+
+.title-txt{
+  margin-right: 20px;
+  font-size:25px;
+  font-weight: bold;
+  color:antiquewhite;
+  border-style:groove;
+}
+
+.btn:hover{
+  background-color: rgb(99, 221, 129); /* Green */
+  
+}
+
+.btn{
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #3300;
+  border: none;
+  color: white;
+  padding: 9px 15px;
+  margin-left: 5px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 12px;
+}
+.btn.btnRight{
+  margin-right: 10px;
+}
+
+form.search{
+  margin-right: 25px;
+  
+}
+/* Style the search field */
+form.search input[type=text] {
+  font-size: 8px;
+  border: 1px solid rgb(146, 140, 140);
+  width: 80%;
+  background: #f1f1f1;
+}
+
+/* Style the submit button */
+form.search button {
+  width: 20%;
+  background: #2196F3;
+  color: white;
+  font-size: 8px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+form.search button:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+form.search::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+img{
+  height: 70px;
+  width: 70px;
+  margin-right: 10px;
+}
+
+.inner-btn{
+  color:black;
+  font-size: 25px;
+  background-color: rgb(255, 255, 255);
+  
+}
+.inner-btn:hover{
+  background-color: black; /* Green */
+  color:rgb(99, 221, 129); /* Green */
+
+
+}
+
+
