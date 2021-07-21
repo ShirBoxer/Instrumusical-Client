@@ -22,15 +22,7 @@ export class MainToolbarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  //TODO: generic function for all categories.
-  getAllGuitars(){
-    console.log("getAllGuitars()");
-    this.instrumentService.getAllGuitars().subscribe((data)=>{
-      this.instruemntsListResponse.emit(data);
-    });
-    
-  }
-
+  
   logIn(){
 
   }
