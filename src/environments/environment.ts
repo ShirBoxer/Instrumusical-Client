@@ -4,7 +4,8 @@
 const baseUrl = 'http://localhost:8003'
 export const environment = {
   production: false,
-  instrumentUrl: baseUrl + '/instrument'
+  instrumentUrl: baseUrl + '/instrument',
+  userUrl: baseUrl + '/user'
 };
 
 /*

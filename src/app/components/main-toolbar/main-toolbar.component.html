@@ -31,18 +31,24 @@
 
 
     <!-- The form -->
-    <form class="search">
-      <input type="text" placeholder="Search.." name="search" size ="20px">
-      <button type="submit"><i class="fa fa-search"></i></button>
-    </form>
-    <button mat-button class="btn rightBtn" (click)="goToCart()">Cart</button>
+    <!-- <form class="search"> -->
+      <!-- <input type="text" placeholder="Search.." name="search" size ="20px"> -->
+      <!-- <button type="submit"><i class="fa fa-search"></i></button> -->
+    <!-- </form> -->
 
-    <!-- Mikes changes: User pipe -->
-    <button mat-button class="btn rightBtn" (click)="connect('log')">Login</button>
-    <button mat-button class="btn rightBtn" (click)="connect('reg')">Register</button>
-   
     
-
+    <!-- Mike's changes: -->
+    <button mat-button class="btn rightBtn" *ngIf="!logged" (click)="connect('log')">Login</button>
+    <button mat-button class="btn rightBtn" *ngIf="!logged" (click)="connect('reg')">Register</button>
+    <button *ngIf="currentUser && logged" class="btn rightBtn" (click)="logout()">Log Out</button>
+    
+    <!-- Dan & Shir's cart: -->
+    <button mat-button class="btn rightBtn" (click)="goToCart()">Cart</button>
+    
+    <!-- Mike's changes: -->
+    <button mat-button ><mat-icon (click)="onSearchClick()">search</mat-icon></button>
+    <button mat-button class="adminContent" *ngIf="currentUser && currentUser.isAdmin" (click)="showUsers()">Users</button>
+    
     
   </mat-toolbar>
   

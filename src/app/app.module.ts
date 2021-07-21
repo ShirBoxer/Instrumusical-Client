@@ -16,6 +16,7 @@ import { InstrumentCardComponent } from './components/instrument-card/instrument
 
 // services
 import { InstrumentService } from './services/instrument.service';
+import { UserService } from './services/user.service';
 
 // js modules
 import { HttpClientModule } from '@angular/common/http';
@@ -47,7 +48,8 @@ import { CartComponent } from './components/cart/cart.component';
     ReactiveFormsModule
   ],
   providers: [
-     InstrumentService
+     InstrumentService,
+     UserService
      ],
   bootstrap: [AppComponent]
 })

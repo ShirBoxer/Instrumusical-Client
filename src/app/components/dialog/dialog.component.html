@@ -1,6 +1,6 @@
 
 <div id="dialogContainer">
-    <h2 mat-dialog-title>
+    <span mat-dialog-title>
         <!-- put toggle btn here  -->
         <mat-button-toggle-group [value]="data.action" >
             <!-- class="auth-toggle" value="login" (change)="onToggle()" -->
@@ -13,8 +13,8 @@
                 REGISTER
             </mat-button-toggle>
         </mat-button-toggle-group>
-    </h2>
-    <img id="dialogImg" src="assets/img/logo.png" alt="logo">
+    </span>
+    <!-- <img id="dialogImg" src="assets/img/logo.png" alt="logo"> -->
     <mat-dialog-content>
         <mat-form-field color="accent">
             <mat-label>
@@ -39,6 +39,7 @@
             <input type="password" matInput [(ngModel)]="data.passwordConfirm" >
           </mat-form-field> 
     </mat-dialog-content>
+    <img id="dialogImg" src="assets/img/logo.png" alt="logo">
     <div #dialogActions>
         <mat-dialog-actions>
             <button mat-raised-button [mat-dialog-close]="data">Submit</button>

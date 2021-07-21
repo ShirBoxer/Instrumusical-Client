@@ -9,8 +9,6 @@ import { Instrument } from '../models/instrument';
 })
 export class InstrumentService {
   private instrumentsUrl = environment.instrumentUrl;
-  private guitar = 'guitar';
-
   
   constructor(private http: HttpClient) { }
 
