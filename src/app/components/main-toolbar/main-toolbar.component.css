@@ -91,5 +91,14 @@ img{
 
 
 }
+button.adminContent:hover{
+  color: #000;
+  background-color: red;
+  border-radius: 30px;
+}
 
-
+input{
+  width:50px;
+  background-color: yellow;
+  color: black
+}

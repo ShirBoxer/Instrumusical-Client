@@ -1,0 +1,20 @@
+#dialogContainer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#dialogActions{
+    display: flex;
+    flex-direction: row;
+}
+mat-dialog-content{
+    display: flex;
+    flex-direction: column;
+}
+
+#dialogImg{
+    width: 100px;
+    height:30px;
+    margin-bottom: 1rem;
+}

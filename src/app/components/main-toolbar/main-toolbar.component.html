@@ -28,19 +28,22 @@
     </mat-menu>
 
     <span class="spacer"></span>
-
-
-    <!-- The form -->
+  
     <form class="search">
       <input type="text" placeholder="Search.." name="search" size ="20px">
       <button type="submit"><i class="fa fa-search"></i></button>
     </form>
-    <button mat-button class="btn rightBtn" (click)="goToCart()" routerLink="/cart" routerLinkActive="activebutton">Cart</button>
-    <button mat-button class="btn rightBtn" (click)="register()">Register</button>
-    <button mat-button class="btn rightBtn" (click)="logIn()">Login</button>
-   
-    
+  
+    <!-- Mike's changes: -->
+    <button mat-button class="btn rightBtn" *ngIf="!logged" (click)="connect('log')">Login</button>
+    <button mat-button class="btn rightBtn" *ngIf="!logged" (click)="connect('reg')">Register</button>
+    <button *ngIf="currentUser && logged" class="btn rightBtn" (click)="logout()">Log Out</button>
 
+    <button mat-button class="btn rightBtn" (click)="goToCart()" routerLink="/cart" routerLinkActive="activebutton">Cart</button>
+
+    <!-- Mike's changes: -->
+    <button mat-button class="adminContent" *ngIf="currentUser && currentUser.isAdmin" (click)="showUsers()">Users</button>
+    
     
   </mat-toolbar>
   

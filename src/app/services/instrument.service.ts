@@ -8,12 +8,6 @@ import { Instrument } from '../models/instrument';
   providedIn: 'root'
 })
 export class InstrumentService {
-  // guitars:Instrument[] = [];
-  // drums:Instrument[] = [];
-  // keys:Instrument[] = [];
-  // djGear:Instrument[] = [];
-  // accessories:Instrument[] = [];
-
   
   constructor(private http: HttpClient) { }
 

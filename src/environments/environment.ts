@@ -6,17 +6,20 @@ const INSTRUMENTS = 'instruments';
 const GUITARS = 'guitars';
 const DRUMS = 'drums';
 const KEYS = 'keys';
+const USER = 'user';
 const DJ_GEAR = 'dj-gear';
 const ACCESSORIES = 'accessories';
 
 export const environment = {
   production: false,
+  userUrl: BASE_URL + '/' + USER,
   bestSellersUrl: BASE_URL + '/' + INSTRUMENTS,
   guitarsUrl: BASE_URL + '/' + INSTRUMENTS + '/' + GUITARS,
   drumsUrl: BASE_URL + '/' + INSTRUMENTS + '/' + DRUMS,
   keysUrl: BASE_URL + '/' + INSTRUMENTS + '/' + KEYS,
   djGearUrl: BASE_URL + '/' + INSTRUMENTS + '/' + DJ_GEAR,
   accessoriesUrl: BASE_URL + '/' + INSTRUMENTS + '/' + ACCESSORIES,
+
 };
 
 /*

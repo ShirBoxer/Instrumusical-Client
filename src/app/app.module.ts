@@ -8,23 +8,28 @@ import { MainToolbarComponent } from './components/main-toolbar/main-toolbar.com
 // material modules
 import { MaterialsModule } from './materials/materials/materials.module';
 
-//components
+// custom components
 import { InstrumentsListComponent } from './components/instruments-list/instruments-list.component';
 import { MainGridComponent } from './components/main-grid/main-grid.component';
+import { MainHeaderComponent } from './components/main-header/main-header.component';
+import { UserCardComponent } from './components/user-card/user-card.component';
+import { InstrumentCardComponent } from './components/instrument-card/instrument-card.component';
 
-//services
+// services
 import { InstrumentService } from './services/instrument.service';
+import { UserService } from './services/user.service';
 
-//js modules
+// js modules
 import { HttpClientModule } from '@angular/common/http';
+
 import { RouterModule } from '@angular/router';
 import { MainHeaderComponent } from './components/main-header/main-header.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
 import { InstrumentCardComponent } from './components/instrument-card/instrument-card.component';
-import { ReactiveFormsModule } from '@angular/forms';
 
-import { MatDialog } from '@angular/material/dialog';
-import { MatDialogModule } from '@angular/material/dialog';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+
 import { DialogComponent } from './components/dialog/dialog.component';
 import { CartComponent } from './components/cart/cart.component';
 
@@ -46,6 +51,7 @@ import { CartComponent } from './components/cart/cart.component';
     BrowserAnimationsModule,
     MaterialsModule,
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule,
     MatDialogModule,
     RouterModule.forRoot([
@@ -61,7 +67,7 @@ import { CartComponent } from './components/cart/cart.component';
   ],
   providers: [
      InstrumentService,
-     MatDialog
+     UserService
      ],
   bootstrap: [AppComponent]
 })
