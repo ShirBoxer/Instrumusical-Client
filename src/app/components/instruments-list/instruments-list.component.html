@@ -1,4 +1,4 @@
-<mat-grid-list cols="3" gutterSize="15px" rowHeight="650px">
+<mat-grid-list cols="3" *ngIf="instruments && instruments.length > 0" gutterSize="15px" rowHeight="650px">
   <mat-grid-tile colspan="1" *ngFor="let obj of instruments">
       <app-instrument-card [instrument]="obj"></app-instrument-card>
     </mat-grid-tile>

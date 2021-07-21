@@ -38,7 +38,7 @@ export class AppComponent {
 
   signInstruments(instruments: Instrument[]){
     this.instruments = instruments;
-    this.currentStatus = status.instrumentList;
+    //this.currentStatus = status.instrumentList;
   }
 
   cartNav(){

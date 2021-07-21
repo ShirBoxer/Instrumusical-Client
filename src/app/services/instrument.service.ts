@@ -8,14 +8,35 @@ import { Instrument } from '../models/instrument';
   providedIn: 'root'
 })
 export class InstrumentService {
-  private instrumentsUrl = environment.instrumentUrl;
-  private guitar = 'guitar';
+  // guitars:Instrument[] = [];
+  // drums:Instrument[] = [];
+  // keys:Instrument[] = [];
+  // djGear:Instrument[] = [];
+  // accessories:Instrument[] = [];
 
   
   constructor(private http: HttpClient) { }
 
-  getAllGuitars(): Observable<Instrument[]>{
-    let url = this.instrumentsUrl;// + '/' + this.guitar;
-    return this.http.get<Instrument[]>(url);
+  getSpecificInstrument(musicalInstrument: String): Observable<Instrument[]>{
+    switch (musicalInstrument){
+
+      case 'guitars':{
+        return this.http.get<Instrument[]>(environment.guitarsUrl);
+      }
+      case 'drums':{
+        return this.http.get<Instrument[]>(environment.drumsUrl);
+      }
+      case 'keys':{
+        return this.http.get<Instrument[]>(environment.keysUrl);
+      }
+      case 'dj-gear':{
+        return this.http.get<Instrument[]>(environment.djGearUrl);
+      }
+      default:{
+        return this.http.get<Instrument[]>(environment.accessoriesUrl);
+      }
+
+    }
   }
+
 }
