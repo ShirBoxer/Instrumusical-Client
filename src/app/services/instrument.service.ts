@@ -38,5 +38,7 @@ export class InstrumentService {
 
     }
   }
-
+  getTopSellers(): Observable<Instrument[]>{
+    return this.http.get<Instrument[]>(environment.bestSellersUrl);
+  }
 }

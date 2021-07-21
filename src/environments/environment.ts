@@ -11,6 +11,7 @@ const ACCESSORIES = 'accessories';
 
 export const environment = {
   production: false,
+  bestSellersUrl: BASE_URL + '/' + INSTRUMENTS,
   guitarsUrl: BASE_URL + '/' + INSTRUMENTS + '/' + GUITARS,
   drumsUrl: BASE_URL + '/' + INSTRUMENTS + '/' + DRUMS,
   keysUrl: BASE_URL + '/' + INSTRUMENTS + '/' + KEYS,

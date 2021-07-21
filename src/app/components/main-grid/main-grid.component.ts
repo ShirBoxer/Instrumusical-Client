@@ -12,12 +12,7 @@ export class MainGridComponent implements OnInit {
   topSellersInstruments: Instrument[] = [];
 
   constructor(private instrumentService: InstrumentService ) {
-  //   this.instrumentService.getAllGuitars().subscribe((instrumentsList) => {
-  //     console.log("got instruments");
-  //     this.topSellersInstruments = instrumentsList.sort((instLeft, instRight) =>{
-  //       return instLeft.sold > instRight.sold ? 1 : -1;
-  //     }).slice(0,4);
-  //   });
+    instrumentService.getTopSellers().subscribe(instruments => this.topSellersInstruments=instruments);
     }
 
   ngOnInit(): void {
