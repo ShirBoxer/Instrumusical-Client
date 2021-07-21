@@ -11,9 +11,7 @@ import { MaterialsModule } from './materials/materials/materials.module';
 // custom components
 import { InstrumentsListComponent } from './components/instruments-list/instruments-list.component';
 import { MainGridComponent } from './components/main-grid/main-grid.component';
-import { MainHeaderComponent } from './components/main-header/main-header.component';
-import { UserCardComponent } from './components/user-card/user-card.component';
-import { InstrumentCardComponent } from './components/instrument-card/instrument-card.component';
+
 
 // services
 import { InstrumentService } from './services/instrument.service';
@@ -53,7 +51,6 @@ import { CartComponent } from './components/cart/cart.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    MatDialogModule,
     RouterModule.forRoot([
       {path: '', component: MainGridComponent},
       {path: 'cart', component: CartComponent},
