@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+
 import { CartService } from 'src/app/services/cart.service';
 import { InstrumentService } from 'src/app/services/instrument.service';
 import { Instrument } from '../../models/instrument'
@@ -35,14 +36,17 @@ export class MainToolbarComponent implements OnInit {
 
   }
 
-  register(){
-    //const dialogConfig = {width: "30%", height:"300px"}  
-    const dialogConfig = {};  
-      let dialogRef = this.dialog.open(DialogComponent, dialogConfig);
-  
-      dialogRef.afterClosed().subscribe(result => {
-        console.log(`Dialog result: ${result}`);
-      });
+  connect(_action:string){
+    //const dialogConfig = {width: "30%", height:"300px"} 
+    // alert(`chosen action: ${action}`)
+    const dialogConfig = {data:{action:_action}};  
+    let dialogRef = this.dialog.open(DialogComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe(_data => {
+      if(_data!='cancel'){
+        
+      }
+    });
     
   }
 

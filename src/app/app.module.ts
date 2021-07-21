@@ -7,19 +7,20 @@ import { MainToolbarComponent } from './components/main-toolbar/main-toolbar.com
 // material modules
 import { MaterialsModule } from './materials/materials/materials.module';
 
-//components
+// custom components
 import { InstrumentsListComponent } from './components/instruments-list/instruments-list.component';
 import { MainGridComponent } from './components/main-grid/main-grid.component';
-
-//services
-import { InstrumentService } from './services/instrument.service';
-
-//js modules
-import { HttpClientModule } from '@angular/common/http';
 import { MainHeaderComponent } from './components/main-header/main-header.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
 import { InstrumentCardComponent } from './components/instrument-card/instrument-card.component';
+
+// services
+import { InstrumentService } from './services/instrument.service';
+
+// js modules
+import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { DialogComponent } from './components/dialog/dialog.component';
 import { CartComponent } from './components/cart/cart.component';
@@ -42,6 +43,7 @@ import { CartComponent } from './components/cart/cart.component';
     BrowserAnimationsModule,
     MaterialsModule,
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule
   ],
   providers: [

@@ -1,12 +1,47 @@
 
 <div id="dialogContainer">
-    <h2 mat-dialog-title>Login</h2>
+    <h2 mat-dialog-title>
+        <!-- put toggle btn here  -->
+        <mat-button-toggle-group [value]="data.action" >
+            <!-- class="auth-toggle" value="login" (change)="onToggle()" -->
+            <mat-button-toggle value="log" (click)="swapAction('log')"> 
+                <mat-icon>lock_open</mat-icon>
+                LOGIN
+            </mat-button-toggle>
+            <mat-button-toggle value="reg" (click)="swapAction('reg')">
+                <mat-icon>fingerprint</mat-icon>
+                REGISTER
+            </mat-button-toggle>
+        </mat-button-toggle-group>
+    </h2>
+    <img id="dialogImg" src="assets/img/logo.png" alt="logo">
     <mat-dialog-content>
-        content here
+        <mat-form-field color="accent">
+            <mat-label>
+                <mat-icon>email</mat-icon>
+                E-mail
+            </mat-label>
+
+            <input matInput [(ngModel)]="data.email">
+        </mat-form-field>
+        <mat-form-field color="accent">
+            <mat-label>
+                <mat-icon>password</mat-icon>
+                Password
+            </mat-label>
+            <input type="password" matInput [(ngModel)]="data.password">
+          </mat-form-field>
+          <mat-form-field *ngIf="dialogData.action==='reg'" color="accent">
+            <mat-label>
+                <mat-icon>password</mat-icon>
+                Confirm password
+            </mat-label>
+            <input type="password" matInput [(ngModel)]="data.passwordConfirm" >
+          </mat-form-field> 
     </mat-dialog-content>
     <div #dialogActions>
         <mat-dialog-actions>
-            <button mat-raised-button mat-dialog-close="submit">Submit</button>
+            <button mat-raised-button [mat-dialog-close]="data">Submit</button>
             <button mat-raised-button mat-dialog-close="cancel">Cancel</button>
         </mat-dialog-actions>
     </div>
