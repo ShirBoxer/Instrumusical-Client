@@ -8,11 +8,11 @@
 
     <button mat-button class="btn" [matMenuTriggerFor]="categories">Categories</button>
     <mat-menu #categories="matMenu">
-      <button mat-menu-item class="inner-btn" (click)="getAllGuitars()">Guitars</button>
-      <button mat-menu-item class="inner-btn" >Drums</button>
-      <button mat-menu-item class="inner-btn" >Keys</button>
-      <button mat-menu-item class="inner-btn" >DJ Gear</button>
-      <button mat-menu-item class="inner-btn" >Accessories</button>
+      <button mat-menu-item class="inner-btn button" routerLink="instruments/guitars" routerLinkActive="activebutton">Guitars</button>
+      <button mat-menu-item class="inner-btn button" routerLink="instruments/drums" routerLinkActive="activebutton">Drums</button>
+      <button mat-menu-item class="inner-btn button" routerLink="instruments/keys" routerLinkActive="activebutton">Keys</button>
+      <button mat-menu-item class="inner-btn button" routerLink="instruments/dj-gear" routerLinkActive="activebutton">DJ Gear</button>
+      <button mat-menu-item class="inner-btn button" routerLink="instruments/accessories" routerLinkActive="activebutton">Accessories</button>
     </mat-menu>
 
     <button mat-button  class="btn"[matMenuTriggerFor]="brands">Brands</button>
@@ -28,25 +28,20 @@
     </mat-menu>
 
     <span class="spacer"></span>
-
-
-    <!-- The form -->
-    <!-- <form class="search"> -->
-      <!-- <input type="text" placeholder="Search.." name="search" size ="20px"> -->
-      <!-- <button type="submit"><i class="fa fa-search"></i></button> -->
-    <!-- </form> -->
-
-    
+  
+    <form class="search">
+      <input type="text" placeholder="Search.." name="search" size ="20px">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  
     <!-- Mike's changes: -->
     <button mat-button class="btn rightBtn" *ngIf="!logged" (click)="connect('log')">Login</button>
     <button mat-button class="btn rightBtn" *ngIf="!logged" (click)="connect('reg')">Register</button>
     <button *ngIf="currentUser && logged" class="btn rightBtn" (click)="logout()">Log Out</button>
-    
-    <!-- Dan & Shir's cart: -->
-    <button mat-button class="btn rightBtn" (click)="goToCart()">Cart</button>
-    
+
+    <button mat-button class="btn rightBtn" (click)="goToCart()" routerLink="/cart" routerLinkActive="activebutton">Cart</button>
+
     <!-- Mike's changes: -->
-    <button mat-button ><mat-icon (click)="onSearchClick()">search</mat-icon></button>
     <button mat-button class="adminContent" *ngIf="currentUser && currentUser.isAdmin" (click)="showUsers()">Users</button>
     
     

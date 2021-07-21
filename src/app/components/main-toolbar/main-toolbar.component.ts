@@ -31,17 +31,10 @@ export class MainToolbarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  //TODO: generic function for all categories.
-  getAllGuitars(){
-    console.log("getAllGuitars()");
-    this.instrumentService.getAllGuitars().subscribe((data)=>{
-      this.instruemntsListResponse.emit(data);
-    });
-    
-  }
 
   showUsers(){
     alert("TODO: complete this function with routing navigation.");
+
   }
 
   connect(_action:string){

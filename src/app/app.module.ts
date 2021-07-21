@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainToolbarComponent } from './components/main-toolbar/main-toolbar.component';
+
 // material modules
 import { MaterialsModule } from './materials/materials/materials.module';
 
@@ -20,6 +21,12 @@ import { UserService } from './services/user.service';
 
 // js modules
 import { HttpClientModule } from '@angular/common/http';
+
+import { RouterModule } from '@angular/router';
+import { MainHeaderComponent } from './components/main-header/main-header.component';
+import { UserCardComponent } from './components/user-card/user-card.component';
+import { InstrumentCardComponent } from './components/instrument-card/instrument-card.component';
+
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 
@@ -45,7 +52,18 @@ import { CartComponent } from './components/cart/cart.component';
     MaterialsModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule,
+    RouterModule.forRoot([
+      {path: '', component: MainGridComponent},
+      {path: 'cart', component: CartComponent},
+      {path: 'instruments/guitars', component: InstrumentsListComponent},
+      {path: 'instruments/drums', component: InstrumentsListComponent},
+      {path: 'instruments/keys', component: InstrumentsListComponent},
+      {path: 'instruments/dj-gear', component: InstrumentsListComponent},
+      {path: 'instruments/accessories', component: InstrumentsListComponent},
+    
+    ]),
   ],
   providers: [
      InstrumentService,
