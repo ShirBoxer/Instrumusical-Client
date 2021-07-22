@@ -9,6 +9,7 @@ import { Instrument } from '../models/instrument';
 })
 export class InstrumentService {
   
+  
   constructor(private http: HttpClient) { }
 
   getSpecificInstrument(musicalInstrument: String): Observable<Instrument[]>{
@@ -31,9 +32,21 @@ export class InstrumentService {
 
     }
   }
+
+  getSpecificBrand(token: string) {
+    return this.http.get<Instrument[]>(environment.brandsUrl,
+      {
+        params:{
+          brandKey : token
+        }
+      });
+  }
+
+
   getTopSellers(): Observable<Instrument[]>{
     return this.http.get<Instrument[]>(environment.bestSellersUrl);
   }
+
   getSearchResult(searchInput : string) {
     //TODO: searchInput validation.
     return this.http.get<Instrument[]>(environment.searchUrl,

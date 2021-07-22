@@ -13,16 +13,15 @@ export class SearchComponent implements OnInit {
 
   constructor(private activeRoute: ActivatedRoute,
      private instrumentsService: InstrumentService) {
-  
    }
 
   ngOnInit(): void {
     this.activeRoute.queryParams.subscribe(params =>{
-      console.log(params);
       this.instrumentsService.getSearchResult(params["searchTxt"])
         .subscribe(instruments => this.instrumentsList=instruments);
     });
-    console.log("in search component, array len = " + this.instrumentsList.length);
-    }
+    
 
-}
+    }
+  }
+

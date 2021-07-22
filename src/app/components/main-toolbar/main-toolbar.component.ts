@@ -17,7 +17,6 @@ export class MainToolbarComponent implements OnInit {
 
   @Output() instruemntsListResponse = new EventEmitter();
   @Output() cartNavigation = new EventEmitter();
-
   @Input() search: string = "";
 
   isAdmin = false;
@@ -38,6 +37,8 @@ export class MainToolbarComponent implements OnInit {
     alert("TODO: complete this function with routing navigation.");
 
   }
+
+  //#################-------USER------######################################
 
   connect(_action:string){
     // predefine dialog configurations
@@ -110,12 +111,10 @@ export class MainToolbarComponent implements OnInit {
     });
   }
 
+
+  
   goToCart(){
     this.cartNavigation.emit();
-  }
-
-  onSearchClick(){
-     alert('todo: route to search view');
   }
 
   alert(msg:string){
