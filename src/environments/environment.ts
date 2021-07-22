@@ -11,12 +11,14 @@ const SEARCH = 'search'
 const GUITARS = 'guitars';
 const DRUMS = 'drums';
 const KEYS = 'keys';
+const USER = 'user';
 const DJ_GEAR = 'dj-gear';
 const ACCESSORIES = 'accessories';
 
 
 export const environment = {
   production: false,
+  userUrl: BASE_URL + '/' + USER,
   bestSellersUrl: BASE_URL + '/' + INSTRUMENTS,
   searchUrl: BASE_URL + '/' + SEARCH,
   guitarsUrl: BASE_URL + '/' + INSTRUMENTS + '/' + GUITARS,
@@ -24,6 +26,7 @@ export const environment = {
   keysUrl: BASE_URL + '/' + INSTRUMENTS + '/' + KEYS,
   djGearUrl: BASE_URL + '/' + INSTRUMENTS + '/' + DJ_GEAR,
   accessoriesUrl: BASE_URL + '/' + INSTRUMENTS + '/' + ACCESSORIES,
+
 };
 
 /*

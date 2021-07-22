@@ -9,13 +9,6 @@ import { Instrument } from '../models/instrument';
 })
 export class InstrumentService {
   
-  // guitars:Instrument[] = [];
-  // drums:Instrument[] = [];
-  // keys:Instrument[] = [];
-  // djGear:Instrument[] = [];
-  // accessories:Instrument[] = [];
-
-  
   constructor(private http: HttpClient) { }
 
   getSpecificInstrument(musicalInstrument: String): Observable<Instrument[]>{

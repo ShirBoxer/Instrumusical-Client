@@ -1,7 +1,14 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
-import { Dialog } from 'src/app/models/dialog';
+// import { MatDialogRef } from '@angular/material/dialog';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+
+export interface DialogData{
+  action:string,
+  email:string,
+  password:string,
+  passwordConfirm:string,
+  phone:string
+}
 
 @Component({
   selector: 'app-dialog',
@@ -10,10 +17,16 @@ import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 })
 export class DialogComponent implements OnInit {
 
-  constructor(
-    public dialogRef: MatDialogRef<DialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Dialog) {}
+  dialogData:DialogData;
+
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {
+    this.dialogData = data;
+  }
+  
   ngOnInit(): void {
   }
 
+  swapAction(_action:string){
+    this.dialogData.action = _action;    
+  }
 }
