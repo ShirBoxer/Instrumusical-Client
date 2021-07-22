@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output, OnDestroy } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { User } from 'src/app/models/user';
 
@@ -13,22 +13,23 @@ import { DialogComponent } from '../dialog/dialog.component';
   templateUrl: './main-toolbar.component.html',
   styleUrls: ['./main-toolbar.component.css']
 })
-export class MainToolbarComponent implements OnInit, OnDestroy {
+export class MainToolbarComponent implements OnInit {
 
   @Output() instruemntsListResponse = new EventEmitter();
   @Output() cartNavigation = new EventEmitter();
 
   isAdmin = false;
-  logged!:boolean;
+  logged = false;
   currentUser: User| undefined;
 
    
   constructor(private instrumentService: InstrumentService,
               private usersService: UserService,
-              public dialog: MatDialog) {}
+              public dialog: MatDialog) {
+
+              }
 
   ngOnInit(): void {
-    this.logged = this.usersService.isLogged();
   }
 
   showUsers(){
@@ -131,12 +132,5 @@ export class MainToolbarComponent implements OnInit, OnDestroy {
       return "Hi, " + res;
     }
     return "No logged user!";
-  }
-
-  ngOnDestroy(){
-    if(this.usersService.isLogged()){
-      const user = this.usersService.getCurrentUser();
-      if(user!=null) this.usersService.logUser(false, user.email, "");
-    }
   }
 }

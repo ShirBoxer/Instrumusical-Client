@@ -4,7 +4,11 @@
 <mat-toolbar>
   
   <img src="assets/img/logo.png" alt="logoGuitar">
-  <button mat-button routerLink="" routerLinkActive="activebutton"><span class="title-txt" >Instrumusical</span></button>
+  <span class="title-txt" >Instrumusical</span>
+  <span class="app-name"></span>
+
+  <!-- Mikes changes: router link the name of the app to home page -->
+  <!-- <button mat-button routerLink="" routerLinkActive="activebutton"><span class="title-txt" >Instrumusical</span></button> -->
     <!-- <span class="app-name"></span> -->
 
     <button mat-button class="btn" [matMenuTriggerFor]="categories">Categories</button>
@@ -44,7 +48,7 @@
     <button mat-button class="btn rightBtn" (click)="goToCart()" routerLink="/cart" routerLinkActive="activebutton">Cart</button>
    
     
-    <!-- Mike's changes: -->
+    <!-- Mike's changes: navigate to cart with icon -->
 
     <!-- <button mat-button class="btn rightBtn" 
       (click)="goToCart()" 
