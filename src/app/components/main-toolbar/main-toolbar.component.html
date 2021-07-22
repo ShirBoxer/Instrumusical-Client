@@ -2,9 +2,10 @@
 
 
 <mat-toolbar>
-    <img src="assets/img/logo.png" alt="logoGuitar">
-    <span class="title-txt" >Instrumusical</span>
-    <span class="app-name"></span>
+  
+  <img src="assets/img/logo.png" alt="logoGuitar">
+  <button mat-button routerLink="" routerLinkActive="activebutton"><span class="title-txt" >Instrumusical</span></button>
+    <!-- <span class="app-name"></span> -->
 
     <button mat-button class="btn" [matMenuTriggerFor]="categories">Categories</button>
     <mat-menu #categories="matMenu">
@@ -34,16 +35,25 @@
       <button type="submit"><i class="fa fa-search"></i></button>
     </form>
   
-    <!-- Mike's changes: -->
+    
     <button mat-button class="btn rightBtn" *ngIf="!logged" (click)="connect('log')">Login</button>
     <button mat-button class="btn rightBtn" *ngIf="!logged" (click)="connect('reg')">Register</button>
+    <button mat-button *ngIf="currentUser && logged" disabled="true">{{greet()}}</button>
     <button *ngIf="currentUser && logged" class="btn rightBtn" (click)="logout()">Log Out</button>
 
     <button mat-button class="btn rightBtn" (click)="goToCart()" routerLink="/cart" routerLinkActive="activebutton">Cart</button>
-
-    <!-- Mike's changes: -->
-    <button mat-button class="adminContent" *ngIf="currentUser && currentUser.isAdmin" (click)="showUsers()">Users</button>
+   
     
+    <!-- Mike's changes: -->
+
+    <!-- <button mat-button class="btn rightBtn" 
+      (click)="goToCart()" 
+      routerLink="/cart" 
+      routerLinkActive="activebutton">
+        <mat-icon>shopping_cart</mat-icon>
+    </button> -->
+
+    <button mat-button class="adminContent" *ngIf="isAdmin" (click)="showUsers()">Admin</button>
     
   </mat-toolbar>
   
