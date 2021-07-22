@@ -12,7 +12,7 @@ export class MainGridComponent implements OnInit {
   topSellersInstruments: Instrument[] = [];
 
   constructor(private instrumentService: InstrumentService ) {
-    instrumentService.getTopSellers().subscribe(instruments => this.topSellersInstruments=instruments);
+    this.instrumentService.getTopSellers().subscribe(instruments => this.topSellersInstruments=instruments);
     }
 
   ngOnInit(): void {

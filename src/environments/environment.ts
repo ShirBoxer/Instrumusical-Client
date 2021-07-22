@@ -1,8 +1,13 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
+
 const BASE_URL = 'http://localhost:8003';
 const INSTRUMENTS = 'instruments';
+
+const SEARCH = 'search'
+
+
 const GUITARS = 'guitars';
 const DRUMS = 'drums';
 const KEYS = 'keys';
@@ -10,10 +15,12 @@ const USER = 'user';
 const DJ_GEAR = 'dj-gear';
 const ACCESSORIES = 'accessories';
 
+
 export const environment = {
   production: false,
   userUrl: BASE_URL + '/' + USER,
   bestSellersUrl: BASE_URL + '/' + INSTRUMENTS,
+  searchUrl: BASE_URL + '/' + SEARCH,
   guitarsUrl: BASE_URL + '/' + INSTRUMENTS + '/' + GUITARS,
   drumsUrl: BASE_URL + '/' + INSTRUMENTS + '/' + DRUMS,
   keysUrl: BASE_URL + '/' + INSTRUMENTS + '/' + KEYS,

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -13,7 +13,6 @@ export class InstrumentService {
 
   getSpecificInstrument(musicalInstrument: String): Observable<Instrument[]>{
     switch (musicalInstrument){
-
       case 'guitars':{
         return this.http.get<Instrument[]>(environment.guitarsUrl);
       }
@@ -34,5 +33,14 @@ export class InstrumentService {
   }
   getTopSellers(): Observable<Instrument[]>{
     return this.http.get<Instrument[]>(environment.bestSellersUrl);
+  }
+  getSearchResult(searchInput : string) {
+    //TODO: searchInput validation.
+    return this.http.get<Instrument[]>(environment.searchUrl,
+      {
+        params:{
+          searchKey: searchInput
+        }
+      });
   }
 }

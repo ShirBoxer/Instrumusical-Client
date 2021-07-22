@@ -1,0 +1,7 @@
+<h1>search</h1>
+
+<ul *ngIf="instrumentsList && instrumentsList.length > 0">
+    <li *ngFor="let item of instrumentsList">
+        <h3>{{item.name}}</h3>
+    </li>
+</ul>

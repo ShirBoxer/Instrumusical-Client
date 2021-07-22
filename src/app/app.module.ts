@@ -30,6 +30,8 @@ import { FormsModule } from '@angular/forms';
 
 import { DialogComponent } from './components/dialog/dialog.component';
 import { CartComponent } from './components/cart/cart.component';
+import { SearchComponent } from './components/search/search.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import { CartComponent } from './components/cart/cart.component';
     UserCardComponent,
     InstrumentCardComponent,
     DialogComponent,
-    CartComponent
+    CartComponent,
+    SearchComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -54,11 +58,13 @@ import { CartComponent } from './components/cart/cart.component';
     RouterModule.forRoot([
       {path: '', component: MainGridComponent},
       {path: 'cart', component: CartComponent},
+      {path: 'search', component: SearchComponent},
       {path: 'instruments/guitars', component: InstrumentsListComponent},
       {path: 'instruments/drums', component: InstrumentsListComponent},
       {path: 'instruments/keys', component: InstrumentsListComponent},
       {path: 'instruments/dj-gear', component: InstrumentsListComponent},
       {path: 'instruments/accessories', component: InstrumentsListComponent},
+      {path: '**', component: NotFoundComponent},
     
     ]),
   ],
