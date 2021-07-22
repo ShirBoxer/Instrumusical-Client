@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { User } from 'src/app/models/user';
 
@@ -17,6 +17,7 @@ export class MainToolbarComponent implements OnInit {
 
   @Output() instruemntsListResponse = new EventEmitter();
   @Output() cartNavigation = new EventEmitter();
+  @Input() search: string = "";
 
   isAdmin = false;
   logged = false;
@@ -112,9 +113,7 @@ export class MainToolbarComponent implements OnInit {
     this.cartNavigation.emit();
   }
 
-  onSearchClick(){
-     alert('todo: route to search view');
-  }
+  
 
   alert(msg:string){
     alert(msg);
