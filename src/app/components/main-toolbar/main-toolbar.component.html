@@ -31,8 +31,7 @@
   
     <form class="search">
       <input type="text" placeholder="Search.." name="search" [(ngModel)]="search" size ="20px">
-      <button type="submit" [queryParams]="{searchTxt : search }" routerLink="search" routerLinkActive="activebutton">
-        <i class="fa fa-search button"></i>
+      <button type="submit" [queryParams]="{searchTxt : search }" routerLink="search" routerLinkActive="activebutton"><i class="fa fa-search button"></i>
       </button>
     </form>
 

@@ -117,6 +117,7 @@ export class MainToolbarComponent implements OnInit {
     this.cartNavigation.emit();
   }
 
+
   alert(msg:string){
     alert(msg);
   }

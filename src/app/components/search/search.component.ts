@@ -11,8 +11,8 @@ import { InstrumentService } from 'src/app/services/instrument.service';
 export class SearchComponent implements OnInit {
   instrumentsList: Instrument[] = [];
 
-  constructor(private activeRoute: ActivatedRoute,
-     private instrumentsService: InstrumentService) {
+  constructor(private activeRoute: ActivatedRoute, private instrumentsService: InstrumentService) {
+  
    }
 
   ngOnInit(): void {
@@ -21,7 +21,7 @@ export class SearchComponent implements OnInit {
         .subscribe(instruments => this.instrumentsList=instruments);
     });
     
-
     }
   }
+
 
