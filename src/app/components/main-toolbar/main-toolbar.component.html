@@ -30,14 +30,12 @@
     <span class="spacer"></span>
   
     <form class="search">
-      <input type="text" placeholder="Search.." name="search" size ="20px">
-      <button type="submit" routerLink="search" routerLinkActive="activebutton"><i class="fa fa-search button"></i></button>
+      <input type="text" placeholder="Search.." name="search" [(ngModel)]="search" size ="20px">
+      <button type="submit" [queryParams]="{searchTxt : search }" routerLink="search" routerLinkActive="activebutton">
+        <i class="fa fa-search button"></i>
+      </button>
     </form>
 
-   
-    
-
-  
     <!-- Mike's changes: -->
     <button mat-button class="btn rightBtn" *ngIf="!logged" (click)="connect('log')">Login</button>
     <button mat-button class="btn rightBtn" *ngIf="!logged" (click)="connect('reg')">Register</button>

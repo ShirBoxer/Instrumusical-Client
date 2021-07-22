@@ -10,16 +10,19 @@ import { InstrumentService } from 'src/app/services/instrument.service';
 })
 export class SearchComponent implements OnInit {
   instrumentsList: Instrument[] = [];
-  searchTxt = "";
-  constructor(private activeRoute: ActivatedRoute, private instrumentsService: InstrumentService) {
-    activeRoute.queryParams.subscribe(params =>{
-      this.instrumentsService.getSearchResult(params["search"])
-        .subscribe(instruments => this.instrumentsList=instruments);
-    });
-    console.log("in search component, array len = " + this.instrumentsList.length);
+
+  constructor(private activeRoute: ActivatedRoute,
+     private instrumentsService: InstrumentService) {
+  
    }
 
   ngOnInit(): void {
-  }
+    this.activeRoute.queryParams.subscribe(params =>{
+      console.log(params);
+      this.instrumentsService.getSearchResult(params["searchTxt"])
+        .subscribe(instruments => this.instrumentsList=instruments);
+    });
+    console.log("in search component, array len = " + this.instrumentsList.length);
+    }
 
 }
