@@ -4,7 +4,7 @@ import { User } from 'src/app/models/user';
 
 import { CartService } from 'src/app/services/cart.service';
 import { InstrumentService } from 'src/app/services/instrument.service';
-import { UserService } from 'src/app/services/user.service';
+import { TokenPayload, UserService } from 'src/app/services/user.service';
 import { Instrument } from '../../models/instrument'
 import { DialogComponent } from '../dialog/dialog.component';
 
@@ -38,45 +38,49 @@ export class MainToolbarComponent implements OnInit {
   }
 
   connect(_action:string){
+
+    // -- DIALOG--
+
     // predefine dialog configurations
     const dialogConfig = {data:{action:_action}};  
-    
     // create a reference to the dialog and open
     let dialogRef = this.dialog.open(DialogComponent, dialogConfig);
-
     // set after closed callback
     dialogRef.afterClosed().subscribe(_data => {
-      
-      if(_data === 'cancel') return; // dialog canceled
-      
+      if(_data === 'cancel') return; 
       // credentials verification
-      const email = _data.email;
-      const pw = _data.password;
-      if (email === "" && pw === "") {
+      const email: string = _data.email;
+      const pw: string = _data.password;
+      if (!(email && pw)) {
         alert("must specify credentials!"); // no credentials TODO: make snackbar
         return; 
       }
-      
-      // on registration
-      if (_data.action === 'reg') {
-        // math pw and confirm pw
+      var newUser: TokenPayload = {
+          email: email,
+          password: pw,
+          name: 'a' // todo: get from dialog
+        }
+      if (_data.action === 'reg') { // on registration
         const pwConfirm = _data.passwordConfirm;
-        if(pw !== pwConfirm) {
+        if(pw !== pwConfirm) { // math pw and confirm pw
           alert("The two passwords don't match.");// TODO: make snackbar
           return;
         }
         
+        
+
         // register
-        this.usersService.createUser(email, pw).subscribe(user=>{
-          this.usersService.setCurrentUser(user);
-          if (user.isAdmin) this.isAdmin = true;
+        this.usersService.register(newUser).subscribe(_response =>{
+          if (!_response.success){
+            alert(`Somthing went wrong: ${_response.errors[0]}`);
+            return;
+          }
         });
       } 
       
       // on login
       else if (_data.action === 'log') {
-        // alert(`sending logging packet: ${_data.email},${_data.password}`);
-        this.usersService.logUser(true, _data.email, _data.password).subscribe(_result => {
+        this.usersService.login().subscribe(_result => {
           // alert(`result: ${_result.success}`)
           if (_result.success) {
             this.logged = true;
@@ -98,15 +102,16 @@ export class MainToolbarComponent implements OnInit {
   }
 
   logout(){
-    const user = this.usersService.getCurrentUser();
-    if(!user) return alert('Somthing is wrong! No current user to log out.');
-    this.usersService.logUser(false, user.email, "").subscribe(_result =>{
-      if (!_result) return alert('Mal packet result.');
-      if (!_result.success) return alert(_result.errors[0]);
-      this.logged = false;
-      this.isAdmin = false;
-      this.usersService.setLogged(false);
-    });
+    const user = this.usersService.logout();
+    // const user = this.usersService.getCurrentUser();
+    // if(!user) return alert('Somthing is wrong! No current user to log out.');
+    // this.usersService.logUser(false, user.email, "").subscribe(_result =>{
+    //   if (!_result) return alert('Mal packet result.');
+    //   if (!_result.success) return alert(_result.errors[0]);
+    //   this.logged = false;
+    //   this.isAdmin = false;
+    //   this.usersService.setLogged(false);
+    // });
   }
 
   goToCart(){

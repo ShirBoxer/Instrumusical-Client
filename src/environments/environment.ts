@@ -9,9 +9,11 @@ const KEYS = 'keys';
 const USER = 'user';
 const DJ_GEAR = 'dj-gear';
 const ACCESSORIES = 'accessories';
+const JWT_NAME = 'instrumusical-token';
 
 export const environment = {
   production: false,
+  JWT_NAME: JWT_NAME,
   userUrl: BASE_URL + '/' + USER,
   bestSellersUrl: BASE_URL + '/' + INSTRUMENTS,
   guitarsUrl: BASE_URL + '/' + INSTRUMENTS + '/' + GUITARS,
