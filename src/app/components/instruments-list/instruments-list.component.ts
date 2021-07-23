@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Instrument } from 'src/app/models/instrument';
 import { Router,ActivatedRoute, ParamMap } from '@angular/router';
 import { InstrumentService } from 'src/app/services/instrument.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-instruments-list',
@@ -16,11 +17,23 @@ export class InstrumentsListComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    // save the route for matching the right service  
-    this.instrumentService.getSpecificInstrument(this.route.url.substring(13))
-    .subscribe(data => this.instruments=data);
-    console.log(`on init ${this.instruments.length}`);
+    if(this.route.url.startsWith('/instruments'))
+      this.categoryRoute(this.route.url.substring(13));
+    else if(this.route.url.startsWith('/brands'))
+      this.brandsRoute(this.route.url.substring(8));
+
   }
+
+  categoryRoute(token: string): void{
+    // save the route for matching the right service  
+    this.instrumentService.getSpecificInstrument(token)
+    .subscribe(data => this.instruments=data);  }
+
+  brandsRoute(token: string): void {
+    this.instrumentService.getSpecificBrand(token)
+    .subscribe(data => this.instruments=data);
+  }
+
   
 
 

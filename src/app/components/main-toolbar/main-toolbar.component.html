@@ -17,21 +17,22 @@
 
     <button mat-button  class="btn"[matMenuTriggerFor]="brands">Brands</button>
     <mat-menu #brands="matMenu">
-      <button class="inner-btn" mat-menu-item>Fender</button>
-      <button class="inner-btn" mat-menu-item>Gibson</button>
-      <button class="inner-btn" mat-menu-item>Taylor</button>
-      <button class="inner-btn" mat-menu-item>Roland</button>
-      <button class="inner-btn" mat-menu-item>Yamaha</button>
-      <button class="inner-btn" mat-menu-item>DW</button>
-      <button class="inner-btn" mat-menu-item>Roland</button>
-      <button class="inner-btn" mat-menu-item>Casio</button>
+      <button class="inner-btn" mat-menu-item routerLink="brands/fender" routerLinkActive="activebutton">Fender</button>
+      <button class="inner-btn" mat-menu-item routerLink="brands/gibson" routerLinkActive="activebutton">Gibson</button>
+      <button class="inner-btn" mat-menu-item routerLink="brands/taylor" routerLinkActive="activebutton">Taylor</button>
+      <button class="inner-btn" mat-menu-item routerLink="brands/roland" routerLinkActive="activebutton">Roland</button>
+      <button class="inner-btn" mat-menu-item routerLink="brands/yamaha" routerLinkActive="activebutton">Yamaha</button>
+      <button class="inner-btn" mat-menu-item routerLink="brands/dw" routerLinkActive="activebutton">DW</button>
+      <button class="inner-btn" mat-menu-item routerLink="brands/pearl" routerLinkActive="activebutton">Pearl</button>
+      <button class="inner-btn" mat-menu-item routerLink="brands/casio" routerLinkActive="activebutton">Casio</button>
     </mat-menu>
 
     <span class="spacer"></span>
   
     <form class="search">
       <input type="text" placeholder="Search.." name="search" [(ngModel)]="search" size ="20px">
-      <button type="submit" [queryParams]="{searchTxt : search}" routerLink="search" routerLinkActive="activebutton"><i class="fa fa-search button"></i></button>
+      <button type="submit" [queryParams]="{searchTxt : search }" routerLink="search" routerLinkActive="activebutton"><i class="fa fa-search button"></i>
+      </button>
     </form>
 
   

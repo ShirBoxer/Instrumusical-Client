@@ -38,6 +38,8 @@ export class MainToolbarComponent implements OnInit {
 
   }
 
+  //#################-------USER------######################################
+
   connect(_action:string){
     // predefine dialog configurations
     const dialogConfig = {data:{action:_action}};  
@@ -109,11 +111,12 @@ export class MainToolbarComponent implements OnInit {
     });
   }
 
+
+  
   goToCart(){
     this.cartNavigation.emit();
   }
 
-  
 
   alert(msg:string){
     alert(msg);

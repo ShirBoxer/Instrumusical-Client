@@ -10,6 +10,7 @@ import { InstrumentService } from 'src/app/services/instrument.service';
 })
 export class SearchComponent implements OnInit {
   instrumentsList: Instrument[] = [];
+
   constructor(private activeRoute: ActivatedRoute, private instrumentsService: InstrumentService) {
   
    }
@@ -19,6 +20,8 @@ export class SearchComponent implements OnInit {
       this.instrumentsService.getSearchResult(params["searchTxt"])
         .subscribe(instruments => this.instrumentsList=instruments);
     });
-    console.log("in search component, array len = " + this.instrumentsList.length);
+    
+    }
   }
-}
+
+
