@@ -4,11 +4,18 @@
 
 const BASE_URL = 'http://localhost:8003';
 const INSTRUMENTS = 'instruments';
+
+
 const SEARCH = 'search';
 const BRANDS = 'brands';
+
 const FILTER_SEARCH = 'filter'
 
+const SCRAPE = 'scrape';
+const ONE = 'one';
 
+
+// Categories //
 const GUITARS = 'guitars';
 const DRUMS = 'drums';
 const KEYS = 'keys';
@@ -16,7 +23,7 @@ const USER = 'user';
 const DJ_GEAR = 'dj-gear';
 const ACCESSORIES = 'accessories';
 
-
+// Brands //
 const GIBSON = 'gibson';
 const TAYLOR = 'taylor';
 const ROLAND = 'roland';
@@ -26,11 +33,11 @@ const PEARL = 'pearl';
 const CASIO = 'casio';
 const FENDER = 'fender';
 
-
-
 export const environment = {
 
   production: false,
+  scrapeUrl: BASE_URL + '/' + SEARCH + '/' + SCRAPE,
+  scrapeOne: BASE_URL + '/' + SEARCH + '/' + SCRAPE + '/' + ONE,
   userUrl: BASE_URL + '/' + USER,
   bestSellersUrl: BASE_URL + '/' + INSTRUMENTS,
   searchUrl: BASE_URL + '/' + SEARCH,
