@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Instrument } from '../models/instrument';
+import { ScrapeInstrument } from '../models/scrape-instrument';
 
 @Injectable({
   providedIn: 'root'
@@ -55,5 +56,9 @@ export class InstrumentService {
           searchKey: searchInput
         }
       });
+  }
+
+  getRandomSetence() : Observable<ScrapeInstrument[]>{
+    return this.http.get<ScrapeInstrument[]>(environment.scrapeOne);
   }
 }
