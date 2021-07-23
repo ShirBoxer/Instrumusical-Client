@@ -1,0 +1,42 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span>&nbsp;Filters:&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By category</span>
+        <mat-form-field >
+            <mat-select [(ngModel)]="categoryValue" appearance="fill" >
+              <mat-option *ngFor="let category of categoriesList" [value]="category">{{category}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By brand</span>
+        <mat-form-field >
+            <mat-select [(ngModel)]="brandValue" appearance="fill" >
+              <mat-option *ngFor="let brand of brandsList" [value]="brand" >{{brand}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By price</span>
+        <mat-form-field >
+            <mat-select [(ngModel)]="priceValue" appearance="fill" >
+              <mat-option *ngFor="let price of pricesList" [value]="price" >{{price}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button type="submit" (click)="searchFilter()" ><i class="fa fa-search button"></i></button>
+
+      
+
+
+    
+        
+     
+
+        <span class="example-spacer"></span>
+        <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">verified_user</mat-icon>
+        
+    
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<ul *ngIf="instrumentsList && instrumentsList.length > 0">
+    <li *ngFor="let item of instrumentsList">
+        <h3>{{item.name}}</h3>
+    </li>
+</ul>

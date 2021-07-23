@@ -30,8 +30,9 @@ import { FormsModule } from '@angular/forms';
 
 import { DialogComponent } from './components/dialog/dialog.component';
 import { CartComponent } from './components/cart/cart.component';
-
-
+import { SearchComponent } from './components/search/search.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,9 @@ import { CartComponent } from './components/cart/cart.component';
     UserCardComponent,
     InstrumentCardComponent,
     DialogComponent,
-    CartComponent
+    CartComponent,
+    SearchComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -54,13 +57,27 @@ import { CartComponent } from './components/cart/cart.component';
     RouterModule.forRoot([
       {path: '', component: MainGridComponent},
       {path: 'cart', component: CartComponent},
+      {path: 'search', component: SearchComponent},
+
       {path: 'instruments/guitars', component: InstrumentsListComponent},
       {path: 'instruments/drums', component: InstrumentsListComponent},
       {path: 'instruments/keys', component: InstrumentsListComponent},
       {path: 'instruments/dj-gear', component: InstrumentsListComponent},
       {path: 'instruments/accessories', component: InstrumentsListComponent},
+
+      {path: 'brands/fender', component: InstrumentsListComponent},
+      {path: 'brands/gibson', component: InstrumentsListComponent},
+      {path: 'brands/taylor', component: InstrumentsListComponent},
+      {path: 'brands/roland', component: InstrumentsListComponent},
+      {path: 'brands/yamaha', component: InstrumentsListComponent},
+      {path: 'brands/dw', component: InstrumentsListComponent},
+      {path: 'brands/pearl', component: InstrumentsListComponent},
+      {path: 'brands/casio', component: InstrumentsListComponent},
+
+      {path: '**', component: NotFoundComponent},
     
     ]),
+
   ],
   providers: [
      InstrumentService,

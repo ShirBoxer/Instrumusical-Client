@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { User } from 'src/app/models/user';
 import { UserService, TokenPayload } from 'src/app/services/user.service';
@@ -17,6 +17,7 @@ export class MainToolbarComponent implements OnInit {
 
   @Output() instruemntsListResponse = new EventEmitter();
   @Output() cartNavigation = new EventEmitter();
+  @Input() search: string = "";
 
   auth: UserService;
   
@@ -36,8 +37,8 @@ export class MainToolbarComponent implements OnInit {
 
   }
 
-  connect(_action: string) {
 
+  connect(_action: string) {
     // predefine dialog configurations
     const dialogConfig = { data: { action: _action } };
     // create a reference to the dialog and open
@@ -89,14 +90,11 @@ export class MainToolbarComponent implements OnInit {
   logout() {
     this.auth.logout();
   }
-
-  goToCart() {
+  
+  goToCart(){
     this.cartNavigation.emit();
   }
 
-  onSearchClick() {
-    alert('todo: route to search view');
-  }
 
   greet() {
     const GREET = "Hi";

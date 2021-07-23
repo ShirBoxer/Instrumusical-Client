@@ -1,19 +1,21 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Instrument } from '../models/instrument';
+import { ScrapeInstrument } from '../models/scrape-instrument';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InstrumentService {
   
+  
+  
   constructor(private http: HttpClient) { }
 
   getSpecificInstrument(musicalInstrument: String): Observable<Instrument[]>{
     switch (musicalInstrument){
-
       case 'guitars':{
         return this.http.get<Instrument[]>(environment.guitarsUrl);
       }
@@ -32,7 +34,39 @@ export class InstrumentService {
 
     }
   }
+
+  getSpecificBrand(token: string) {
+    return this.http.get<Instrument[]>(environment.brandsUrl,
+      {
+        params:{
+          brandKey : token
+        }
+      });
+  }
+
+
   getTopSellers(): Observable<Instrument[]>{
     return this.http.get<Instrument[]>(environment.bestSellersUrl);
+  }
+
+  getSearchResult(searchInput : string) {
+    //TODO: searchInput validation.
+    return this.http.get<Instrument[]>(environment.searchUrl,
+      {
+        params:{
+          searchKey: searchInput
+        }
+      });
+  }
+  getFilterResults(filters : string[]) {
+    return this.http.get<Instrument[]>(environment.filterSearchUrl,
+      {
+        params:{
+          searchKey: filters
+        }
+      });
+  }
+  getRandomSetence() : Observable<ScrapeInstrument[]>{
+    return this.http.get<ScrapeInstrument[]>(environment.scrapeOne);
   }
 }

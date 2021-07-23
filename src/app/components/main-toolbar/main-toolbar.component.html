@@ -4,13 +4,12 @@
 <mat-toolbar>
   
   <img src="assets/img/logo.png" alt="logoGuitar">
-  <span class="title-txt" >Instrumusical</span>
-  <span class="app-name"></span>
+<!--   <span class="title-txt" >Instrumusical</span>
+  <span class="app-name"></span> -->
 
-  <!-- Mikes changes: router link the name of the app to home page -->
-  <!-- <button mat-button routerLink="" routerLinkActive="activebutton"><span class="title-txt" >Instrumusical</span></button> -->
-    <!-- <span class="app-name"></span> -->
-
+<!--   Mikes changes: router link the name of the app to home page -->
+  <button mat-button routerLink=""><span class="title-txt" >Instrumusical</span></button>
+<!--     <span class="app-name"></span>  -->
     <button mat-button class="btn" [matMenuTriggerFor]="categories">Categories</button>
     <mat-menu #categories="matMenu">
       <button mat-menu-item class="inner-btn button" routerLink="instruments/guitars" routerLinkActive="activebutton">Guitars</button>
@@ -22,40 +21,30 @@
 
     <button mat-button  class="btn"[matMenuTriggerFor]="brands">Brands</button>
     <mat-menu #brands="matMenu">
-      <button class="inner-btn" mat-menu-item>Fender</button>
-      <button class="inner-btn" mat-menu-item>Gibson</button>
-      <button class="inner-btn" mat-menu-item>Taylor</button>
-      <button class="inner-btn" mat-menu-item>Roland</button>
-      <button class="inner-btn" mat-menu-item>Yamaha</button>
-      <button class="inner-btn" mat-menu-item>DW</button>
-      <button class="inner-btn" mat-menu-item>Roland</button>
-      <button class="inner-btn" mat-menu-item>Casio</button>
+      <button class="inner-btn" mat-menu-item routerLink="brands/fender" routerLinkActive="activebutton">Fender</button>
+      <button class="inner-btn" mat-menu-item routerLink="brands/gibson" routerLinkActive="activebutton">Gibson</button>
+      <button class="inner-btn" mat-menu-item routerLink="brands/taylor" routerLinkActive="activebutton">Taylor</button>
+      <button class="inner-btn" mat-menu-item routerLink="brands/roland" routerLinkActive="activebutton">Roland</button>
+      <button class="inner-btn" mat-menu-item routerLink="brands/yamaha" routerLinkActive="activebutton">Yamaha</button>
+      <button class="inner-btn" mat-menu-item routerLink="brands/dw" routerLinkActive="activebutton">DW</button>
+      <button class="inner-btn" mat-menu-item routerLink="brands/pearl" routerLinkActive="activebutton">Pearl</button>
+      <button class="inner-btn" mat-menu-item routerLink="brands/casio" routerLinkActive="activebutton">Casio</button>
     </mat-menu>
 
     <span class="spacer"></span>
   
     <form class="search">
-      <input type="text" placeholder="Search.." name="search" size ="20px">
-      <button type="submit"><i class="fa fa-search"></i></button>
+      <input type="text" placeholder="Search.." name="search" [(ngModel)]="search" size ="20px">
+      <button type="submit" [queryParams]="{searchTxt : search }" routerLink="search" routerLinkActive="activebutton"><i class="fa fa-search button"></i>
+      </button>
     </form>
   
-    
     <button mat-button class="btn rightBtn" *ngIf="!auth.isLoggedIn()" (click)="connect('log')">Login</button>
     <button mat-button class="btn rightBtn" *ngIf="!auth.isLoggedIn()" (click)="connect('reg')">Register</button>
     <button mat-button *ngIf="auth.isLoggedIn()" disabled="true">{{greet()}}</button>
     <button *ngIf="auth.isLoggedIn()" class="btn rightBtn" (click)="logout()">Log Out</button>
 
-    <button mat-button class="btn rightBtn" (click)="goToCart()" routerLink="/cart" routerLinkActive="activebutton">Cart</button>
-   
-    
-    <!-- Mike's changes: navigate to cart with icon -->
-
-    <!-- <button mat-button class="btn rightBtn" 
-      (click)="goToCart()" 
-      routerLink="/cart" 
-      routerLinkActive="activebutton">
-        <mat-icon>shopping_cart</mat-icon>
-    </button> -->
+    <button mat-button class="btn rightBtn" (click)="goToCart()" routerLink="cart" routerLinkActive="activebutton">Cart</button>
 
     <button mat-button class="adminContent" *ngIf="auth.isAdmin()" (click)="showUsers()">Admin</button>
     
