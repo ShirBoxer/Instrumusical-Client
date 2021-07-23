@@ -11,6 +11,7 @@ import { ScrapeInstrument } from '../models/scrape-instrument';
 export class InstrumentService {
   
   
+  
   constructor(private http: HttpClient) { }
 
   getSpecificInstrument(musicalInstrument: String): Observable<Instrument[]>{
@@ -57,7 +58,14 @@ export class InstrumentService {
         }
       });
   }
-
+  getFilterResults(filters : string[]) {
+    return this.http.get<Instrument[]>(environment.filterSearchUrl,
+      {
+        params:{
+          searchKey: filters
+        }
+      });
+  }
   getRandomSetence() : Observable<ScrapeInstrument[]>{
     return this.http.get<ScrapeInstrument[]>(environment.scrapeOne);
   }

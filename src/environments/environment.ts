@@ -8,8 +8,12 @@ const INSTRUMENTS = 'instruments';
 
 const SEARCH = 'search';
 const BRANDS = 'brands';
+
+const FILTER_SEARCH = 'filter'
+
 const SCRAPE = 'scrape';
 const ONE = 'one';
+
 
 // Categories //
 const GUITARS = 'guitars';
@@ -37,7 +41,7 @@ export const environment = {
   userUrl: BASE_URL + '/' + USER,
   bestSellersUrl: BASE_URL + '/' + INSTRUMENTS,
   searchUrl: BASE_URL + '/' + SEARCH,
-  
+  filterSearchUrl: BASE_URL + '/' + SEARCH + '/' + FILTER_SEARCH,
   brandsUrl: BASE_URL + '/' + INSTRUMENTS + '/' + BRANDS,
   //   category   //
   guitarsUrl: BASE_URL + '/' + INSTRUMENTS + '/' + GUITARS,
