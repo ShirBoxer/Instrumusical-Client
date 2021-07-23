@@ -2,7 +2,7 @@
 
 
 <mat-toolbar>
-  
+
   <img src="assets/img/logo.png" alt="logoGuitar">
 <!--   <span class="title-txt" >Instrumusical</span>
   <span class="app-name"></span> -->
@@ -31,8 +31,8 @@
       <button class="inner-btn" mat-menu-item routerLink="brands/casio" routerLinkActive="activebutton">Casio</button>
     </mat-menu>
 
+    <button mat-button class="btn" routerLink="stats" routerLinkActive="activebutton">Stats</button>
     <span class="spacer"></span>
-  
     <form class="search">
       <input type="text" placeholder="Search.." name="search" [(ngModel)]="search" size ="20px">
       <button type="submit" [queryParams]="{searchTxt : search }" routerLink="search" routerLinkActive="activebutton"><i class="fa fa-search button"></i>
