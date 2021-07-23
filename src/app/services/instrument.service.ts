@@ -10,6 +10,7 @@ import { Instrument } from '../models/instrument';
 export class InstrumentService {
   
   
+  
   constructor(private http: HttpClient) { }
 
   getSpecificInstrument(musicalInstrument: String): Observable<Instrument[]>{
@@ -53,6 +54,14 @@ export class InstrumentService {
       {
         params:{
           searchKey: searchInput
+        }
+      });
+  }
+  getFilterResults(filters : string[]) {
+    return this.http.get<Instrument[]>(environment.filterSearchUrl,
+      {
+        params:{
+          searchKey: filters
         }
       });
   }

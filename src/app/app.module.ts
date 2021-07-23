@@ -32,8 +32,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
 import { CartComponent } from './components/cart/cart.component';
 import { SearchComponent } from './components/search/search.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-
-
+ 
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,0 +1,9 @@
+.mat-toolbar{
+    background-color:rgb(127, 173, 135);
+}
+.example-icon {
+    padding: 0 14px;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
