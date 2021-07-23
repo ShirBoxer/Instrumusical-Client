@@ -22,6 +22,7 @@ const KEYS = 'keys';
 const USER = 'user';
 const DJ_GEAR = 'dj-gear';
 const ACCESSORIES = 'accessories';
+const JWT_NAME = 'instrumusical-token';
 
 // Brands //
 const GIBSON = 'gibson';
@@ -36,8 +37,11 @@ const FENDER = 'fender';
 export const environment = {
 
   production: false,
+  
+  JWT_NAME: JWT_NAME,
   scrapeUrl: BASE_URL + '/' + SEARCH + '/' + SCRAPE,
   scrapeOne: BASE_URL + '/' + SEARCH + '/' + SCRAPE + '/' + ONE,
+
   userUrl: BASE_URL + '/' + USER,
   bestSellersUrl: BASE_URL + '/' + INSTRUMENTS,
   searchUrl: BASE_URL + '/' + SEARCH,
