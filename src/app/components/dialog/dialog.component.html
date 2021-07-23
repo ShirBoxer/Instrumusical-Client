@@ -16,9 +16,16 @@
     </span>
     <!-- <img id="dialogImg" src="assets/img/logo.png" alt="logo"> -->
     <mat-dialog-content>
+        <mat-form-field *ngIf="dialogData.action==='reg'" color="accent">
+            <mat-label>
+                <mat-icon>person_outline</mat-icon>
+                Username
+            </mat-label>
+            <input type="text" matInput [(ngModel)]="data.name">
+          </mat-form-field>
         <mat-form-field color="accent">
             <mat-label>
-                <mat-icon>email</mat-icon>
+                <mat-icon>alternate_email</mat-icon>
                 E-mail
             </mat-label>
 
