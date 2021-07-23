@@ -5,8 +5,9 @@
 const BASE_URL = 'http://localhost:8003';
 const INSTRUMENTS = 'instruments';
 
-const SEARCH = 'search'
-
+const SEARCH = 'search';
+const SCRAPE = 'scrape';
+const ONE = 'one';
 
 const GUITARS = 'guitars';
 const DRUMS = 'drums';
@@ -18,6 +19,8 @@ const ACCESSORIES = 'accessories';
 
 export const environment = {
   production: false,
+  scrapeUrl: BASE_URL + '/' + SEARCH + '/' + SCRAPE,
+  scrapeOne: BASE_URL + '/' + SEARCH + '/' + SCRAPE + '/' + ONE,
   userUrl: BASE_URL + '/' + USER,
   bestSellersUrl: BASE_URL + '/' + INSTRUMENTS,
   searchUrl: BASE_URL + '/' + SEARCH,
