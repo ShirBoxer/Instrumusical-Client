@@ -1,10 +1,10 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { User } from 'src/app/models/user';
+import { UserService, TokenPayload } from 'src/app/services/user.service';
 
 import { CartService } from 'src/app/services/cart.service';
 import { InstrumentService } from 'src/app/services/instrument.service';
-import { TokenPayload, UserService } from 'src/app/services/user.service';
 import { Instrument } from '../../models/instrument'
 import { DialogComponent } from '../dialog/dialog.component';
 
@@ -18,124 +18,92 @@ export class MainToolbarComponent implements OnInit {
   @Output() instruemntsListResponse = new EventEmitter();
   @Output() cartNavigation = new EventEmitter();
 
-  isAdmin = false;
-  logged = false;
-  currentUser: User| undefined;
-
-   
+  auth: UserService;
+  
+  
   constructor(private instrumentService: InstrumentService,
-              private usersService: UserService,
-              public dialog: MatDialog) {
+    private authService: UserService,
+    public dialog: MatDialog) {
+      this.auth = authService;
 
-              }
+  }
 
   ngOnInit(): void {
   }
 
-  showUsers(){
+  showUsers() {
     alert("TODO: complete this function with routing navigation.");
 
   }
 
-  connect(_action:string){
-
-    // -- DIALOG--
+  connect(_action: string) {
 
     // predefine dialog configurations
-    const dialogConfig = {data:{action:_action}};  
+    const dialogConfig = { data: { action: _action } };
     // create a reference to the dialog and open
     let dialogRef = this.dialog.open(DialogComponent, dialogConfig);
     // set after closed callback
     dialogRef.afterClosed().subscribe(_data => {
-      if(_data === 'cancel') return; 
-      // credentials verification
+      
+      if (_data === 'cancel') return;
+      
       const email: string = _data.email;
       const pw: string = _data.password;
-      if (!(email && pw)) {
-        alert("must specify credentials!"); // no credentials TODO: make snackbar
-        return; 
-      }
-      var newUser: TokenPayload = {
-          email: email,
-          password: pw,
-          name: 'a' // todo: get from dialog
-        }
-      if (_data.action === 'reg') { // on registration
-        const pwConfirm = _data.passwordConfirm;
-        if(pw !== pwConfirm) { // math pw and confirm pw
-          alert("The two passwords don't match.");// TODO: make snackbar
-          return;
-        }
-        
-        
+      const pwConfirm: string = _data.passwordConfirm;
+      const name: string = _data.name;
+      if ( !(email && pw ) ) 
+        return alert("must specify credentials!"); 
 
-        // register
-        this.usersService.register(newUser).subscribe(_response =>{
-          if (!_response.success){
-            alert(`Somthing went wrong: ${_response.errors[0]}`);
-            return;
-          }
-        });
-      } 
-      
-      // on login
-      else if (_data.action === 'log') {
-        this.usersService.login().subscribe(_result => {
-          // alert(`result: ${_result.success}`)
-          if (_result.success) {
-            this.logged = true;
-            this.currentUser = _result.data[0];
-            this.isAdmin = _result.data[0].isAdmin;
-            if(this.currentUser!= undefined) {
-              this.usersService.setCurrentUser(this.currentUser);
-            }
-            const auser = this.usersService.getCurrentUser();
-            if(auser!=null){
-              alert(`current user set: ${auser.connected},${auser.email},${auser.password},${auser._id},${auser.isAdmin},`);
-            }
-          }
-        });
+      var aUser: TokenPayload = {
+        email: email,
+        password: pw,
+        name: (name ? name : '')
       }
-      
+
+      if (_data.action === 'reg') {
+        if (pw !== pwConfirm) 
+          return alert("The two passwords must match!");
+        this.register(aUser);        
+      } else if (_data.action === 'log') 
+          this.login(aUser); 
     });
-    
   }
 
-  logout(){
-    const user = this.usersService.logout();
-    // const user = this.usersService.getCurrentUser();
-    // if(!user) return alert('Somthing is wrong! No current user to log out.');
-    // this.usersService.logUser(false, user.email, "").subscribe(_result =>{
-    //   if (!_result) return alert('Mal packet result.');
-    //   if (!_result.success) return alert(_result.errors[0]);
-    //   this.logged = false;
-    //   this.isAdmin = false;
-    //   this.usersService.setLogged(false);
-    // });
+  private register(_user: TokenPayload){
+    this.auth.register(_user).subscribe( () => {
+      alert(`Hi, ${_user.name}!\nWelcome to the crew!!!`)
+    },(_err) => {
+      console.log(_err);
+      alert('Email already in use!\nPlease try again!');
+    });
   }
 
-  goToCart(){
+  private login(_user: TokenPayload){
+    this.auth.login(_user).subscribe(_result => {
+      if (_result.success) {
+        alert(`Welcome back, ${this.auth.getUserDetails()?.name}`);
+      }
+    });
+  }
+
+  logout() {
+    this.auth.logout();
+  }
+
+  goToCart() {
     this.cartNavigation.emit();
   }
 
-  onSearchClick(){
-     alert('todo: route to search view');
+  onSearchClick() {
+    alert('todo: route to search view');
   }
 
-  alert(msg:string){
-    alert(msg);
-  }
-  greet(){
-    if (this.logged && this.currentUser){
-      let email = this.currentUser.email;
-      let res = "";
-      for (let i=0; i< email.length; i++){
-        let c = email.charAt(i);
-        if (c=='@') break;
-        res += c; 
-      }
-      return "Hi, " + res;
-    }
-    return "No logged user!";
+  greet() {
+    const GREET = "Hi";
+    var addition = "";
+    var user = this.auth.getUserDetails();
+    if(user!=null)
+      addition = `, ${user.name}`;
+      return `${GREET}${addition}!`
   }
 }

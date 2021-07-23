@@ -40,10 +40,10 @@
     </form>
   
     
-    <button mat-button class="btn rightBtn" *ngIf="!logged" (click)="connect('log')">Login</button>
-    <button mat-button class="btn rightBtn" *ngIf="!logged" (click)="connect('reg')">Register</button>
-    <button mat-button *ngIf="currentUser && logged" disabled="true">{{greet()}}</button>
-    <button *ngIf="currentUser && logged" class="btn rightBtn" (click)="logout()">Log Out</button>
+    <button mat-button class="btn rightBtn" *ngIf="!auth.isLoggedIn()" (click)="connect('log')">Login</button>
+    <button mat-button class="btn rightBtn" *ngIf="!auth.isLoggedIn()" (click)="connect('reg')">Register</button>
+    <button mat-button *ngIf="auth.isLoggedIn()" disabled="true">{{greet()}}</button>
+    <button *ngIf="auth.isLoggedIn()" class="btn rightBtn" (click)="logout()">Log Out</button>
 
     <button mat-button class="btn rightBtn" (click)="goToCart()" routerLink="/cart" routerLinkActive="activebutton">Cart</button>
    
@@ -57,7 +57,7 @@
         <mat-icon>shopping_cart</mat-icon>
     </button> -->
 
-    <button mat-button class="adminContent" *ngIf="isAdmin" (click)="showUsers()">Admin</button>
+    <button mat-button class="adminContent" *ngIf="auth.isAdmin()" (click)="showUsers()">Admin</button>
     
   </mat-toolbar>
   

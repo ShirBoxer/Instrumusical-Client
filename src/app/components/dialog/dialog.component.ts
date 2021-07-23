@@ -7,7 +7,7 @@ export interface DialogData{
   email:string,
   password:string,
   passwordConfirm:string,
-  phone:string
+  name:string
 }
 
 @Component({
