@@ -32,6 +32,8 @@ import { DialogComponent } from './components/dialog/dialog.component';
 import { CartComponent } from './components/cart/cart.component';
 import { SearchComponent } from './components/search/search.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { StatsModule } from './stats/stats.module';
+import { StatisticsComponent } from './stats/statistics/statistics.component';
  
 @NgModule({
   declarations: [
@@ -48,6 +50,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     NotFoundComponent
   ],
   imports: [
+    StatsModule,
     BrowserModule,
     BrowserAnimationsModule,
     MaterialsModule,
@@ -55,6 +58,13 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
+      {path: 'stats',
+       component: StatisticsComponent,
+      children : [
+        {path:'stats',
+        component: StatisticsComponent}
+      ]
+      },
       {path: '', component: MainGridComponent},
       {path: 'cart', component: CartComponent},
       {path: 'search', component: SearchComponent},
@@ -83,6 +93,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
      InstrumentService,
      UserService
      ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [StatsModule]
 })
 export class AppModule { }
