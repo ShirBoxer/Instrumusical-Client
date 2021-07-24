@@ -1,0 +1,11 @@
+app-user-item{
+    background-color: rgb(230, 230, 230);
+    border: solid black 4px;
+    align-content: space-around;
+    border-radius: 0px;
+    display: flex;
+    height:250px;
+    width:300px;
+    align-content: center;
+}
+

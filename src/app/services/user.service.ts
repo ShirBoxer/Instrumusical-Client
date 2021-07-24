@@ -23,6 +23,11 @@ export interface TokenPayload {
   name: string;// <--- add question mark after colon if not working
 }
 
+export interface DataResponse{
+  success:boolean,
+  data: any
+}
+
 interface TokenResponse {
   token: string;
 }
@@ -34,10 +39,23 @@ export class UserService {
 
   private userUrl = environment.userUrl;
   private token: string;
+  private users: User[];
+  
 
-  constructor(private http: HttpClient,
-    private route: Router) { this.token = ""; }
+  constructor(
+    private http: HttpClient,
+    private route: Router) {
+    this.token = "";
+    this.users = [];
+  }
 
+  public getUsersFromDB(): Observable<DataResponse> { 
+    return this.http.get<DataResponse>(this.userUrl);
+  }
+
+  // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  // @@@@@@@@@@@@@@@@@@@@@@@@@@@@ Authentication @@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
   // Token methods
   private saveToken(_token: string): void {
@@ -55,10 +73,8 @@ export class UserService {
   private request(_method: 'get' | 'post', _type: 'login' | 'register' | 'profile', _user?: TokenPayload): Observable<any> {
     let base!: Observable<any>;
 
-
     if (_method === 'post') base = this.http.post(`${this.userUrl}/${_type}`, _user);
     else if (_method === 'get') base = this.http.get(`${this.userUrl}/${_type}`, { "headers": { "Authorization": `Bearer ${this.getToken()}` } });
-    console.log(`Url prefix: ${this.userUrl}`)
     const request = base.pipe(
       map((_data: TokenResponse) => {
         if (_data.token)
@@ -73,11 +89,7 @@ export class UserService {
   public register(_user: TokenPayload): Observable<any> {
 
     return this.request('post', 'register', _user);
-
   }
-
-
-
   public login(_user: TokenPayload): Observable<any> {
     return this.request('post', 'login', _user);
   }

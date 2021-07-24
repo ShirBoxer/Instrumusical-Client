@@ -32,11 +32,6 @@ export class MainToolbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  showUsers() {
-    alert("TODO: complete this function with routing navigation.");
-
-  }
-
 
   connect(_action: string) {
     // predefine dialog configurations
@@ -52,8 +47,7 @@ export class MainToolbarComponent implements OnInit {
       const pw: string = _data.password;
       const pwConfirm: string = _data.passwordConfirm;
       const name: string = _data.name;
-      if ( !(email && pw ) ) 
-        return alert("must specify credentials!"); 
+      if ( !(email && pw ) ) return alert("must specify credentials!"); 
 
       var aUser: TokenPayload = {
         email: email,
@@ -94,7 +88,6 @@ export class MainToolbarComponent implements OnInit {
   goToCart(){
     this.cartNavigation.emit();
   }
-
 
   greet() {
     const GREET = "Hi";
