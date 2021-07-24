@@ -43,6 +43,7 @@ export const environment = {
   scrapeOne: BASE_URL + '/' + SEARCH + '/' + SCRAPE + '/' + ONE,
 
   userUrl: BASE_URL + '/' + USER,
+  instrumentsUrl: `${BASE_URL}/${INSTRUMENTS}`,
   bestSellersUrl: BASE_URL + '/' + INSTRUMENTS,
   searchUrl: BASE_URL + '/' + SEARCH,
   filterSearchUrl: BASE_URL + '/' + SEARCH + '/' + FILTER_SEARCH,

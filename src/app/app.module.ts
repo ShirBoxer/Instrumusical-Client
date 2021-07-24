@@ -34,6 +34,9 @@ import { SearchComponent } from './components/search/search.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { StatsModule } from './stats/stats.module';
 import { StatisticsComponent } from './stats/statistics/statistics.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard/admin-dashboard.component';
+import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
+
  
 @NgModule({
   declarations: [
@@ -47,9 +50,10 @@ import { StatisticsComponent } from './stats/statistics/statistics.component';
     DialogComponent,
     CartComponent,
     SearchComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
+    
     StatsModule,
     BrowserModule,
     BrowserAnimationsModule,
@@ -57,7 +61,15 @@ import { StatisticsComponent } from './stats/statistics/statistics.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    AdminDashboardModule,
     RouterModule.forRoot([
+      {path: 'admin',
+       component: AdminDashboardComponent,
+      children : [
+        {path:'admin',
+        component: AdminDashboardComponent}
+      ]
+      },
       {path: 'stats',
        component: StatisticsComponent,
       children : [
@@ -68,6 +80,7 @@ import { StatisticsComponent } from './stats/statistics/statistics.component';
       {path: '', component: MainGridComponent},
       {path: 'cart', component: CartComponent},
       {path: 'search', component: SearchComponent},
+      {path: 'admin', component: AdminDashboardComponent},
 
       {path: 'instruments/guitars', component: InstrumentsListComponent},
       {path: 'instruments/drums', component: InstrumentsListComponent},
@@ -85,7 +98,6 @@ import { StatisticsComponent } from './stats/statistics/statistics.component';
       {path: 'brands/casio', component: InstrumentsListComponent},
 
       {path: '**', component: NotFoundComponent},
-    
     ]),
 
   ],

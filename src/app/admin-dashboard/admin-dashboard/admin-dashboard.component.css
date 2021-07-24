@@ -1,0 +1,22 @@
+.adminops{
+    margin: 1px;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    border-radius: 10px;
+}
+#container{
+    display: flex;
+    justify-content: center;
+}
+
+mat-button-toggle{
+    width: 20%;
+    color: red;
+    border: darkred solid 5px;
+}
+
+#admin-content{
+    /* background-color:darkblue; */
+    width: 100%;
+}

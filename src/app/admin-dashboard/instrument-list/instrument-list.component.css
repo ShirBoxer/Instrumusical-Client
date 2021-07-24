@@ -1,0 +1,32 @@
+.addbtn{
+    width:50%;
+    color:white;
+    background-color: rgb(80, 80, 88);
+    margin:4px;
+    padding: 4px;
+    border: 5px solid darkred;
+    border-radius: 30px;
+    font-size: xx-large;
+}
+
+.addbtnContainer{
+    display: flex;
+    justify-content: center;
+}
+
+#addPanel{
+    background-color: RGB(30,30,30);
+}
+
+mat-form-field{
+    margin: 20px;
+    color: white;
+}
+
+.narrow{
+    width: 50px;
+}
+.submit{
+    display: flex;
+    flex-flow: end;
+}

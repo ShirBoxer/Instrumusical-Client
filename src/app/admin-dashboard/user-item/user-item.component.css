@@ -1,0 +1,16 @@
+/*  */
+
+.card {
+    margin: auto;
+    text-align: center;
+    border-color: black;
+    color: blue;
+  }
+
+  .sspan{
+     font-size:x-small;
+  }
+
+  .lspan{
+      font-size: xx-large;
+  }
