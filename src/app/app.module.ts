@@ -7,6 +7,8 @@ import { MainToolbarComponent } from './components/main-toolbar/main-toolbar.com
 
 // material modules
 import { MaterialsModule } from './materials/materials/materials.module';
+import {MatStepperModule} from '@angular/material/stepper';
+
 
 // custom components
 import { InstrumentsListComponent } from './components/instruments-list/instruments-list.component';
@@ -54,6 +56,7 @@ import { StatisticsComponent } from './stats/statistics/statistics.component';
     BrowserModule,
     BrowserAnimationsModule,
     MaterialsModule,
+    MatStepperModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,

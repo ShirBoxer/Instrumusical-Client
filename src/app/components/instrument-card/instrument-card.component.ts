@@ -19,7 +19,7 @@ export class InstrumentCardComponent implements OnInit {
   addToCart(item: Instrument){
     this.cartService.addToCart(item);
     window.alert('Your product has been added to the cart!');
-    console.log(`Item ${item.name} was added to the cart`);
+    //console.log(`Item ${item.name} was added to the cart`);
 
   }
 
