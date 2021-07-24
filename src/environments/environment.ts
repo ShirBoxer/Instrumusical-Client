@@ -36,6 +36,10 @@ const PEARL = 'pearl';
 const CASIO = 'casio';
 const FENDER = 'fender';
 
+
+const STORE ='store';
+
+
 const BAR = "bar";
 const SCATTER = "scatter";
 const PIE = "pie"
@@ -55,7 +59,11 @@ export const environment = {
   searchUrl: BASE_URL + '/' + SEARCH,
   filterSearchUrl: BASE_URL + '/' + SEARCH + '/' + FILTER_SEARCH,
   brandsUrl: BASE_URL + '/' + INSTRUMENTS + '/' + BRANDS,
+
+  storeUrl: BASE_URL + '/' + STORE,
+  
   orderUrl: BASE_URL + '/' + ORDER,
+
 
   //   category   //
   guitarsUrl: BASE_URL + '/' + INSTRUMENTS + '/' + GUITARS,
