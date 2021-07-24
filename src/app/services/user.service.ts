@@ -72,6 +72,7 @@ export class UserService {
   // Make an http request method
   private request(_method: 'get' | 'post', _type: 'login' | 'register' | 'profile', _user?: TokenPayload): Observable<any> {
     let base!: Observable<any>;
+
     if (_method === 'post') base = this.http.post(`${this.userUrl}/${_type}`, _user);
     else if (_method === 'get') base = this.http.get(`${this.userUrl}/${_type}`, { "headers": { "Authorization": `Bearer ${this.getToken()}` } });
     const request = base.pipe(
@@ -86,9 +87,9 @@ export class UserService {
   // -- Actions --
 
   public register(_user: TokenPayload): Observable<any> {
+
     return this.request('post', 'register', _user);
   }
-
   public login(_user: TokenPayload): Observable<any> {
     return this.request('post', 'login', _user);
   }

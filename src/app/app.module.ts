@@ -7,6 +7,8 @@ import { MainToolbarComponent } from './components/main-toolbar/main-toolbar.com
 
 // material modules
 import { MaterialsModule } from './materials/materials/materials.module';
+import {MatStepperModule} from '@angular/material/stepper';
+
 
 // custom components
 import { InstrumentsListComponent } from './components/instruments-list/instruments-list.component';
@@ -16,6 +18,7 @@ import { MainGridComponent } from './components/main-grid/main-grid.component';
 // services
 import { InstrumentService } from './services/instrument.service';
 import { UserService } from './services/user.service';
+import { StoreService } from './services/store.service';
 
 // js modules
 import { HttpClientModule } from '@angular/common/http';
@@ -34,8 +37,13 @@ import { SearchComponent } from './components/search/search.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { StatsModule } from './stats/stats.module';
 import { StatisticsComponent } from './stats/statistics/statistics.component';
+
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard/admin-dashboard.component';
 import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
+
+
+import { FooterComponent } from './components/footer/footer.component';
+import { MapComponent } from './components/map/map.component';
 
  
 @NgModule({
@@ -51,6 +59,10 @@ import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
     CartComponent,
     SearchComponent,
     NotFoundComponent,
+
+    FooterComponent,
+    MapComponent
+
   ],
   imports: [
     
@@ -58,6 +70,7 @@ import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
     BrowserModule,
     BrowserAnimationsModule,
     MaterialsModule,
+    MatStepperModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
@@ -82,6 +95,8 @@ import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
       {path: 'search', component: SearchComponent},
       {path: 'admin', component: AdminDashboardComponent},
 
+      {path: 'map', component: MapComponent},
+
       {path: 'instruments/guitars', component: InstrumentsListComponent},
       {path: 'instruments/drums', component: InstrumentsListComponent},
       {path: 'instruments/keys', component: InstrumentsListComponent},
@@ -103,7 +118,8 @@ import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
   ],
   providers: [
      InstrumentService,
-     UserService
+     UserService,
+     StoreService
      ],
   bootstrap: [AppComponent],
   exports: [StatsModule]

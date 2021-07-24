@@ -1,0 +1,14 @@
+.full{
+    height: 450px;
+    width: 450px;
+    border-radius: 50px ;
+    border: 5px solid black;
+}
+.container{
+    background-color: gray;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}

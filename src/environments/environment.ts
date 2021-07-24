@@ -9,11 +9,12 @@ const INSTRUMENTS = 'instruments';
 const SEARCH = 'search';
 const BRANDS = 'brands';
 
-const FILTER_SEARCH = 'filter'
-
+const FILTER_SEARCH = 'filter';
+const DATA = 'data';
 const SCRAPE = 'scrape';
 const ONE = 'one';
-
+const KEYWORDS = 'keywords';
+const ALL = 'all';
 
 // Categories //
 const GUITARS = 'guitars';
@@ -23,6 +24,7 @@ const USER = 'user';
 const DJ_GEAR = 'dj-gear';
 const ACCESSORIES = 'accessories';
 const JWT_NAME = 'instrumusical-token';
+const ORDER = 'order';
 
 // Brands //
 const GIBSON = 'gibson';
@@ -34,10 +36,20 @@ const PEARL = 'pearl';
 const CASIO = 'casio';
 const FENDER = 'fender';
 
+
+const STORE ='store';
+
+
+const BAR = "bar";
+const SCATTER = "scatter";
+const PIE = "pie"
 export const environment = {
 
   production: false,
-  
+  allInstrumentsUrl: BASE_URL + '/' + INSTRUMENTS + '/' + ALL,
+  barDataUrl: BASE_URL + '/' + DATA + '/' + BAR + '/' + KEYWORDS,
+  scatterDataUrl: BASE_URL + '/' + DATA + '/' + SCATTER,
+  pieDataUrl: BASE_URL + '/' + DATA + '/' + PIE,
   JWT_NAME: JWT_NAME,
   scrapeUrl: BASE_URL + '/' + SEARCH + '/' + SCRAPE,
   scrapeOne: BASE_URL + '/' + SEARCH + '/' + SCRAPE + '/' + ONE,
@@ -48,6 +60,12 @@ export const environment = {
   searchUrl: BASE_URL + '/' + SEARCH,
   filterSearchUrl: BASE_URL + '/' + SEARCH + '/' + FILTER_SEARCH,
   brandsUrl: BASE_URL + '/' + INSTRUMENTS + '/' + BRANDS,
+
+  storeUrl: BASE_URL + '/' + STORE,
+  
+  orderUrl: BASE_URL + '/' + ORDER,
+
+
   //   category   //
   guitarsUrl: BASE_URL + '/' + INSTRUMENTS + '/' + GUITARS,
   drumsUrl: BASE_URL + '/' + INSTRUMENTS + '/' + DRUMS,
