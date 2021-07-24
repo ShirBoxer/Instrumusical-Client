@@ -14,6 +14,10 @@ export class InstrumentService {
   
   constructor(private http: HttpClient) { }
 
+  getAllInstruments(): Observable<Instrument[]>{
+    return this.http.get<Instrument[]>(environment.allInstrumentsUrl);
+  }
+
   getSpecificInstrument(musicalInstrument: String): Observable<Instrument[]>{
     switch (musicalInstrument){
       case 'guitars':{
@@ -49,7 +53,7 @@ export class InstrumentService {
     return this.http.get<Instrument[]>(environment.bestSellersUrl);
   }
 
-  getSearchResult(searchInput : string) {
+  getSearchResult(searchInput : string): Observable<Instrument[]> {
     //TODO: searchInput validation.
     return this.http.get<Instrument[]>(environment.searchUrl,
       {
