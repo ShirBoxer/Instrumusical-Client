@@ -20,6 +20,7 @@ export class MainHeaderComponent implements OnInit {
 
   update(){
     this.instrumentsService.getRandomSetence().subscribe((sentence)=>{
+      if(!sentence || !sentence[0]) return;
       this.link = "https://en.wikipedia.org" +  sentence[0].link;
       this.name = sentence[0].name;
     });
