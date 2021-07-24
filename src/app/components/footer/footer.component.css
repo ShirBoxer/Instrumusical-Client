@@ -1,0 +1,43 @@
+.container{
+    color: white;
+    background-color: black;
+    display:flex;
+    justify-content:space-around;
+    align-self: flex-end;
+    position:fixed;
+    bottom:0;
+    width: 100%;
+}
+.title-txt{
+    color: white;
+    margin: 20px;
+    font-size:25px;
+    font-weight: bold;
+    /* color:#000; */
+    border-style:groove;
+  }
+  img{
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+  }
+  mat-icon{
+      margin: 2rem;
+  }
+  /* .mapbuttom{
+   
+    justify-content: center;
+    align-items: center;
+    display: flex;
+   
+  } */
+
+  .midbtns{
+    display: flex;
+    justify-content: center;
+  }
+
+  .leftside{
+    display: flex;
+    align-items: center;
+  }

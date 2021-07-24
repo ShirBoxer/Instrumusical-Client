@@ -16,6 +16,7 @@ import { MainGridComponent } from './components/main-grid/main-grid.component';
 // services
 import { InstrumentService } from './services/instrument.service';
 import { UserService } from './services/user.service';
+import { StoreService } from './services/store.service';
 
 // js modules
 import { HttpClientModule } from '@angular/common/http';
@@ -34,6 +35,8 @@ import { SearchComponent } from './components/search/search.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { StatsModule } from './stats/stats.module';
 import { StatisticsComponent } from './stats/statistics/statistics.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { MapComponent } from './components/map/map.component';
  
 @NgModule({
   declarations: [
@@ -47,7 +50,9 @@ import { StatisticsComponent } from './stats/statistics/statistics.component';
     DialogComponent,
     CartComponent,
     SearchComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FooterComponent,
+    MapComponent
   ],
   imports: [
     StatsModule,
@@ -68,6 +73,8 @@ import { StatisticsComponent } from './stats/statistics/statistics.component';
       {path: '', component: MainGridComponent},
       {path: 'cart', component: CartComponent},
       {path: 'search', component: SearchComponent},
+
+      {path: 'map', component: MapComponent},
 
       {path: 'instruments/guitars', component: InstrumentsListComponent},
       {path: 'instruments/drums', component: InstrumentsListComponent},
@@ -91,7 +98,8 @@ import { StatisticsComponent } from './stats/statistics/statistics.component';
   ],
   providers: [
      InstrumentService,
-     UserService
+     UserService,
+     StoreService
      ],
   bootstrap: [AppComponent],
   exports: [StatsModule]

@@ -34,6 +34,8 @@ const PEARL = 'pearl';
 const CASIO = 'casio';
 const FENDER = 'fender';
 
+const STORE ='store';
+
 export const environment = {
 
   production: false,
@@ -47,6 +49,7 @@ export const environment = {
   searchUrl: BASE_URL + '/' + SEARCH,
   filterSearchUrl: BASE_URL + '/' + SEARCH + '/' + FILTER_SEARCH,
   brandsUrl: BASE_URL + '/' + INSTRUMENTS + '/' + BRANDS,
+  storeUrl: BASE_URL + '/' + STORE,
   //   category   //
   guitarsUrl: BASE_URL + '/' + INSTRUMENTS + '/' + GUITARS,
   drumsUrl: BASE_URL + '/' + INSTRUMENTS + '/' + DRUMS,
