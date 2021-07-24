@@ -23,6 +23,7 @@ const USER = 'user';
 const DJ_GEAR = 'dj-gear';
 const ACCESSORIES = 'accessories';
 const JWT_NAME = 'instrumusical-token';
+const ORDER = 'order';
 
 // Brands //
 const GIBSON = 'gibson';
@@ -47,6 +48,8 @@ export const environment = {
   searchUrl: BASE_URL + '/' + SEARCH,
   filterSearchUrl: BASE_URL + '/' + SEARCH + '/' + FILTER_SEARCH,
   brandsUrl: BASE_URL + '/' + INSTRUMENTS + '/' + BRANDS,
+  orderUrl: BASE_URL + '/' + ORDER,
+
   //   category   //
   guitarsUrl: BASE_URL + '/' + INSTRUMENTS + '/' + GUITARS,
   drumsUrl: BASE_URL + '/' + INSTRUMENTS + '/' + DRUMS,
