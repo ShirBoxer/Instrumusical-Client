@@ -15,6 +15,7 @@ const SCRAPE = 'scrape';
 const ONE = 'one';
 const KEYWORDS = 'keywords';
 const ALL = 'all';
+const CHEAPEST = 'cheapest';
 
 // Categories //
 const GUITARS = 'guitars';
@@ -48,6 +49,7 @@ const PIE = "pie"
 export const environment = {
 
   production: false,
+  bestOffersUrl : BASE_URL + '/' + SEARCH + '/' + CHEAPEST,
   allInstrumentsUrl: BASE_URL + '/' + INSTRUMENTS + '/' + ALL,
   barDataUrl: BASE_URL + '/' + DATA + '/' + BAR + '/' + KEYWORDS,
   scatterDataUrl: BASE_URL + '/' + DATA + '/' + SCATTER,
