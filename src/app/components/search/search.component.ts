@@ -34,8 +34,18 @@ export class SearchComponent implements OnInit {
     .getFilterResults([this.categoryValue,this.brandValue,this.priceValue])
     .subscribe(instruments =>{
       this.instrumentsList=instruments;
+      console.log(instruments);
     } );
   }
+  
+  bestOffers(): void {
+    this.instrumentsService.getBestOffers().subscribe(instruments => {
+      this.instrumentsList = instruments;
+      console.log(instruments);
+    });
+  }
+  
+  
 } 
 
 
