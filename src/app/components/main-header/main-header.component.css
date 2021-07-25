@@ -7,10 +7,13 @@
     display: inline-block;
     overflow: hidden;
     /* set height to fit one item */
-    height: 30px;
+    height: 45px;
     width: 100%;
+    margin-top: 15px;
   }
-  
+  .tag-slider{
+    background-color:rgb(209, 203, 211);
+  }
   .sliding-words {
     display: inline-flex;
     flex-direction: row;
@@ -27,4 +30,11 @@
       /* (Word count - 1) * 100% */
       left: +100%;
     }
+  }
+
+  .sentence{
+    font-family: 'Courier New', Courier, monospace;
+    font-size:25px;
+    font-weight: bold;
+    color:rgb(17, 66, 48);
   }
