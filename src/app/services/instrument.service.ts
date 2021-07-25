@@ -62,6 +62,7 @@ export class InstrumentService {
         }
       });
   }
+
   getFilterResults(filters : string[]) {
     return this.http.get<Instrument[]>(environment.filterSearchUrl,
       {
@@ -70,6 +71,7 @@ export class InstrumentService {
         }
       });
   }
+  
   getRandomSetence() : Observable<ScrapeInstrument[]>{
     return this.http.get<ScrapeInstrument[]>(environment.scrapeOne);
   }
