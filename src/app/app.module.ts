@@ -44,6 +44,7 @@ import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
 
 import { FooterComponent } from './components/footer/footer.component';
 import { MapComponent } from './components/map/map.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
  
 @NgModule({
@@ -114,6 +115,7 @@ import { MapComponent } from './components/map/map.component';
 
       {path: '**', component: NotFoundComponent},
     ]),
+    NgbModule,
 
   ],
   providers: [
