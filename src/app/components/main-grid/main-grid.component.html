@@ -1,25 +1,76 @@
 <app-main-header></app-main-header>
-
+<div class="main container">
 <mat-grid-list *ngIf="topSellersInstruments && topSellersInstruments.length == 4" cols="12">
 
-    <mat-grid-tile  rowspan="4" colspan="5">
+    <mat-grid-tile  rowspan="3" colspan="3">
         <img [src]="topSellersInstruments[0].imgPath">
     </mat-grid-tile>
 
-    <mat-grid-tile rowspan="2" colspan="5">
+    <mat-grid-tile rowspan="3" colspan="3">
         <img [src]="topSellersInstruments[1].imgPath">
     </mat-grid-tile>
 
-    <mat-grid-tile rowspan="4" colspan="2">
-        <app-user-card></app-user-card>
-    </mat-grid-tile>
 
-    <mat-grid-tile rowspan="2" colspan="3">
+    <mat-grid-tile rowspan="3" colspan="3">
         <img [src]="topSellersInstruments[2].imgPath">
     </mat-grid-tile>
     
-    <mat-grid-tile rowspan="2" colspan="2">
+    <mat-grid-tile rowspan="3" colspan="3">
         <img [src]="topSellersInstruments[3].imgPath">
     </mat-grid-tile>
-    
 </mat-grid-list>
+
+<div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="https://media-exp1.licdn.com/dms/image/C4E03AQHu6Rk92o2_-A/profile-displayphoto-shrink_800_800/0/1605192550785?e=1632960000&v=beta&t=lfHZUbQ4XRhe1XwxlApYVZgo0k_C24ua1cTJQxLvZAI" alt="Jane" style="width:100%">
+        <div class="container">
+          <h2>Itai Blumenkrantz</h2>
+          <p class="title">Developer</p>
+          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+          <p>itai64@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="column">
+      <div class="card">
+        <img src="https://media-exp1.licdn.com/dms/image/C4D03AQH5Vqv35OwYEw/profile-displayphoto-shrink_800_800/0/1596715037706?e=1632960000&v=beta&t=_R5e6uJ489lkwKspmk7RUcoTVu8u1lNWr4Vo4R5E26I" alt="Mike" style="width:100%">
+        <div class="container">
+          <h2>Shir Boxer</h2>
+          <p class="title">Developer</p>
+          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+          <p>shirboxer@gmail.com</p>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="https://media-exp1.licdn.com/dms/image/C4D03AQHJNHUAkqvrcA/profile-displayphoto-shrink_800_800/0/1573036340604?e=1632960000&v=beta&t=dcJXl9-RFnxgNyfJzQZZfGvrONN_XiiKwzOjjIqtAIs" alt="John" style="width:100%">
+        <div class="container">
+          <h2>Dan Shmirer</h2>
+          <p class="title">Developer</p>
+          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+          <p>dshmirer@gmail.com</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+        <div class="card">
+          <img src="https://media-exp1.licdn.com/dms/image/C4D03AQHuK61SpRNbGA/profile-displayphoto-shrink_800_800/0/1577796029495?e=1632960000&v=beta&t=6FILXqG50N-o8g9DV7437GNfNJUiGJysklize1AKXd0" alt="John" style="width:100%">
+          <div class="container">
+            <h2>Mike Lasry</h2>
+            <p class="title">Developer</p>
+            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+            <p>mikelasry@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>
+  
+

@@ -1,9 +1,26 @@
 .mat-toolbar{
-    background-color:rgb(127, 173, 135);
+  background-color:rgb(127, 173, 135);
 }
 .example-icon {
-    padding: 0 14px;
-  }
-  .example-spacer {
-    flex: 1 1 auto;
-  }
+  padding: 0 14px;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.btn{
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #3300;
+  border: none;
+  color: white;
+  padding: 9px 15px;
+  margin-left: 5px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 12px;
+}
+.btn:hover{
+  background-color: rgb(99, 221, 129); /* Green */
+  
+}

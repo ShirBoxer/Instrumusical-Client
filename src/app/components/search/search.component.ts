@@ -36,12 +36,14 @@ export class SearchComponent implements OnInit {
     .getFilterResults([this.categoryValue,this.brandValue,this.priceValue])
     .subscribe(instruments =>{
       this.instrumentsList=instruments;
+      console.log(instruments);
     } );
-    console.log(this.brandValue);
-    console.log(this.categoryValue);
-    console.log(this.priceValue);
-
-
+  }
+  bestOffers(): void {
+    this.instrumentsService.getBestOffers().subscribe(instruments => {
+      this.instrumentsList = instruments;
+      console.log(instruments);
+    })
   }
   }
 

@@ -73,4 +73,8 @@ export class InstrumentService {
   getRandomSetence() : Observable<ScrapeInstrument[]>{
     return this.http.get<ScrapeInstrument[]>(environment.scrapeOne);
   }
+
+  getBestOffers() : Observable<Instrument[]>{
+    return this.http.get<Instrument[]>(environment.bestOffersUrl);
+  }
 }
