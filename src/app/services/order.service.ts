@@ -16,7 +16,7 @@ export class OrderService {
  
 
   addOrder(orderParams: { numOfProducts: number[]; owner: string; orderDate: Date; supplyDate: Date; address: any; phoneNum: any; totalPrice: number; products: Instrument[]; }): Observable<Order>{
-    
+    console.log(orderParams);
     return this.http.post<Order>(environment.orderUrl,{
       params :orderParams
     });

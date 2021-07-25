@@ -10,7 +10,7 @@ import { InstrumentService } from 'src/app/services/instrument.service';
 export class MainGridComponent implements OnInit {
 
   topSellersInstruments: Instrument[] = [];
-
+  
   constructor(private instrumentService: InstrumentService ) {
     this.instrumentService.getTopSellers().subscribe(instruments => this.topSellersInstruments=instruments);
     }
