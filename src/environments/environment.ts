@@ -36,6 +36,8 @@ const PEARL = 'pearl';
 const CASIO = 'casio';
 const FENDER = 'fender';
 
+const COUNT_REVIEWS= "totalValue";
+
 
 const STORE ='store';
 
@@ -53,6 +55,8 @@ export const environment = {
   JWT_NAME: JWT_NAME,
   scrapeUrl: BASE_URL + '/' + SEARCH + '/' + SCRAPE,
   scrapeOne: BASE_URL + '/' + SEARCH + '/' + SCRAPE + '/' + ONE,
+
+  countReviews:BASE_URL + '/' +COUNT_REVIEWS,
 
   userUrl: BASE_URL + '/' + USER,
   bestSellersUrl: BASE_URL + '/' + INSTRUMENTS,
