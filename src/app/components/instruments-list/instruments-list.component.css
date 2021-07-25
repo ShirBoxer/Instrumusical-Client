@@ -1,5 +1,7 @@
 mat-grid-list{
     background-color:rgb(170, 214, 191);
+    padding-bottom: 200px;
+
 }
 app-instrument-card{
     background-color:rgb(255, 255, 255);;

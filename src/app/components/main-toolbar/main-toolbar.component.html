@@ -7,7 +7,6 @@
 <!--   <span class="title-txt" >Instrumusical</span>
   <span class="app-name"></span> -->
 
-<!--   Mikes changes: router link the name of the app to home page -->
   <button mat-button routerLink=""><span class="title-txt" >Instrumusical</span></button>
 <!--     <span class="app-name"></span>  -->
     <button mat-button class="btn" [matMenuTriggerFor]="categories">Categories</button>
@@ -46,7 +45,7 @@
 
     <button mat-button class="btn rightBtn" (click)="goToCart()" routerLink="cart" routerLinkActive="activebutton">Cart</button>
 
-    <button mat-button class="adminContent" *ngIf="auth.isAdmin()" (click)="showUsers()">Admin</button>
+    <button mat-button class="adminContent" *ngIf="auth.isAdmin()" routerLink="admin">Admin</button>
     
   </mat-toolbar>
   

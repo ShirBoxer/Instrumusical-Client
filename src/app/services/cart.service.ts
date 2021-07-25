@@ -74,5 +74,7 @@ export class CartService {
   clearCart(){
     this.cartItems = [];
     this.cartCounter = [];
+    this.totalPrice = 0;
+
   }
 }

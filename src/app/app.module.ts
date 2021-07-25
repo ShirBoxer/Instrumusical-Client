@@ -37,8 +37,14 @@ import { SearchComponent } from './components/search/search.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { StatsModule } from './stats/stats.module';
 import { StatisticsComponent } from './stats/statistics/statistics.component';
+
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard/admin-dashboard.component';
+import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
+
+
 import { FooterComponent } from './components/footer/footer.component';
 import { MapComponent } from './components/map/map.component';
+
  
 @NgModule({
   declarations: [
@@ -53,10 +59,13 @@ import { MapComponent } from './components/map/map.component';
     CartComponent,
     SearchComponent,
     NotFoundComponent,
+
     FooterComponent,
     MapComponent
+
   ],
   imports: [
+    
     StatsModule,
     BrowserModule,
     BrowserAnimationsModule,
@@ -65,7 +74,15 @@ import { MapComponent } from './components/map/map.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    AdminDashboardModule,
     RouterModule.forRoot([
+      {path: 'admin',
+       component: AdminDashboardComponent,
+      children : [
+        {path:'admin',
+        component: AdminDashboardComponent}
+      ]
+      },
       {path: 'stats',
        component: StatisticsComponent,
       children : [
@@ -76,6 +93,7 @@ import { MapComponent } from './components/map/map.component';
       {path: '', component: MainGridComponent},
       {path: 'cart', component: CartComponent},
       {path: 'search', component: SearchComponent},
+      {path: 'admin', component: AdminDashboardComponent},
 
       {path: 'map', component: MapComponent},
 
@@ -95,7 +113,6 @@ import { MapComponent } from './components/map/map.component';
       {path: 'brands/casio', component: InstrumentsListComponent},
 
       {path: '**', component: NotFoundComponent},
-    
     ]),
 
   ],

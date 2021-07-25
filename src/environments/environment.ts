@@ -59,6 +59,7 @@ export const environment = {
   countReviews:BASE_URL + '/' +COUNT_REVIEWS,
 
   userUrl: BASE_URL + '/' + USER,
+  instrumentsUrl: `${BASE_URL}/${INSTRUMENTS}`,
   bestSellersUrl: BASE_URL + '/' + INSTRUMENTS,
   searchUrl: BASE_URL + '/' + SEARCH,
   filterSearchUrl: BASE_URL + '/' + SEARCH + '/' + FILTER_SEARCH,

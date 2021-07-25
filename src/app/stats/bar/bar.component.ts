@@ -21,8 +21,8 @@ export class BarComponent implements OnInit {
   public data : any[] = []; 
   private svg !: any; // store svg image that d3 draws into DOM
   private margin = 50;
-  private width = 500 - (this.margin * 2);
-  private height = 300 - (this.margin * 2);
+  private width = 800 - (this.margin * 2);
+  private height = 450 - (this.margin * 2);
   
   constructor(private instrumentService: InstrumentService) {
         //GET ALL IUNSTRUMENTS AND SHOW HOW MUCH FROM EACH WE HOLD IN DB
@@ -32,8 +32,8 @@ export class BarComponent implements OnInit {
         this.data.push({Framework : 'guitars', Stars: this.categoriesFreq.guitars, Released: this.categoriesFreq.guitars });
         this.data.push({Framework : 'drums', Stars: this.categoriesFreq.drums, Released: this.categoriesFreq.drums });
         this.data.push({Framework : 'keys', Stars: this.categoriesFreq.keys, Released: this.categoriesFreq.keys });
-        this.data.push({Framework : 'gear', Stars: this.categoriesFreq['dj-gear'], Released: this.categoriesFreq['dj-gear'] });
-        this.data.push({Framework : 'guitars', Stars: this.categoriesFreq.accessories, Released: this.categoriesFreq.accessories});
+        this.data.push({Framework : 'DJ gear', Stars: this.categoriesFreq['dj-gear'], Released: this.categoriesFreq['dj-gear'] });
+        this.data.push({Framework : 'accessories', Stars: this.categoriesFreq.accessories, Released: this.categoriesFreq.accessories});
 
 
         this.createSvg();
@@ -116,7 +116,6 @@ export class BarComponent implements OnInit {
             .attr("y", (d: { Stars: d3.NumberValue; }) => y(d.Stars))
             .attr("width", x.bandwidth())
             .attr("height", (d: { Stars: d3.NumberValue; }) => this.height - y(d.Stars) || 0)
-            .attr("fill", "#d04a35")
-            .attr("appHighlight");
+            .attr("fill", "#d04a35");
   }
 }

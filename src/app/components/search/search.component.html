@@ -20,14 +20,9 @@
             </mat-select>
         </mat-form-field>
         <button type="submit" (click)="searchFilter()" ><i class="fa fa-search button"></i></button>
+        <button class="btn" (click)="bestOffers()">Best Offers</button>
 
       
-
-
-    
-        
-     
-
         <span class="example-spacer"></span>
         <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">verified_user</mat-icon>
         
@@ -35,8 +30,9 @@
     </mat-toolbar-row>
 </mat-toolbar>
 
-<ul *ngIf="instrumentsList && instrumentsList.length > 0">
-    <li *ngFor="let item of instrumentsList">
-        <h3>{{item.name}}</h3>
-    </li>
-</ul>
+
+<mat-grid-list cols="3" *ngIf="instrumentsList && instrumentsList.length > 0" gutterSize="15px" rowHeight="650px">
+    <mat-grid-tile colspan="1" *ngFor="let obj of instrumentsList">
+        <app-instrument-card [instrument]="obj"></app-instrument-card>
+      </mat-grid-tile>
+  </mat-grid-list>
