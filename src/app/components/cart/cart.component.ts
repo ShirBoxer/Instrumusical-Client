@@ -81,8 +81,6 @@ export class CartComponent implements OnInit {
 
  ///    Order   ///
   newOrder(): void {
-    this.cartService.clearCart();
-    this.updateData();
     let user = this.userService.getUserDetails()!._id;
     let supplyTime = new Date();
     supplyTime.setDate(supplyTime.getDate() + 7);
@@ -104,9 +102,13 @@ export class CartComponent implements OnInit {
         this.inOrder = false;
         this.instruments = [];
         this.quantities = []
+        // cleaning the cart
+        this.cartService.clearCart();
+        this.updateData();    
         alert(`Yay!! your order has been submitted, The estimated time of arrival time: ${o.supplyDate}`);
     });
-    
+
+   
 
     
   }
