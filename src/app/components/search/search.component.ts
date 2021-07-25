@@ -19,9 +19,7 @@ export class SearchComponent implements OnInit {
   brandsList: string[] =  ['','Yamaha','Casio','Gibson'];
   pricesList: string[] =  ['','0$-250$','250$-500$','500$-1000$','1000$-2000$'];
   
-  constructor(private activeRoute: ActivatedRoute, private instrumentsService: InstrumentService) {
-  
-   }
+  constructor(private activeRoute: ActivatedRoute, private instrumentsService: InstrumentService) {}
 
   ngOnInit(): void {
     this.activeRoute.queryParams.subscribe(params =>{
@@ -37,12 +35,7 @@ export class SearchComponent implements OnInit {
     .subscribe(instruments =>{
       this.instrumentsList=instruments;
     } );
-    console.log(this.brandValue);
-    console.log(this.categoryValue);
-    console.log(this.priceValue);
-
-
   }
-  }
+} 
 
 

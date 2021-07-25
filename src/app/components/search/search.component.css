@@ -7,3 +7,14 @@
   .example-spacer {
     flex: 1 1 auto;
   }
+  
+.mat-grid-list  {
+  padding-bottom: 200px;
+  background-color:rgb(215, 235, 217);
+}
+
+app-instrument-card{
+  background-color:rgb(255, 255, 255);;
+  border-radius: 5%;
+  box-shadow: 10px 25px 50px rgba(black, 0.5);
+}

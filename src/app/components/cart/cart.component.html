@@ -13,11 +13,11 @@
           <div class="item" *ngFor="let obj of instruments; let i = index;">
 
               <div class="buttons">
-              <span class="delete-btn" (click)="removeFromCart(obj)"></span>
+                <span class="delete-btn" (click)="removeFromCart(obj)"></span>
               </div>
 
               <div class="image">
-              <img src={{obj.imgPath}} alt="Image" style="width:100px;height:100px;"/>
+                <img src={{obj.imgPath}} alt="Image" style="width:100px;height:100px;"/>
               </div>
 
               <div class="description">
@@ -26,13 +26,13 @@
               </div>
 
               <div class="quantity">
-              <button class="plus-btn" (click)="addOne(obj)" type="button" name="button">
-                  <img src="assets/img/plus.svg" alt="plus button" />
-              </button>
-              <input type="text" name="name" [value]=quantities[i]>
-              <button class="minus-btn" (click)="decreaseOne(obj)" type="button" name="button">
+                <button class="plus-btn" (click)="addOne(obj)" type="button" name="button">
+                <img src="assets/img/plus.svg" alt="plus button" />
+                </button>
+                <input type="text" name="name" [value]=quantities[i]>
+                <button class="minus-btn" (click)="decreaseOne(obj)" type="button" name="button">
                   <img src="assets/img/minus.svg" alt="minus button" />
-              </button>
+                </button>
               </div>
 
               <div class="price" >${{obj.price}}</div>
@@ -41,6 +41,8 @@
               <button mat-button class="checkoutBtn" (click)=toOrder()>Checkout</button>
           </div>
           
+
+
           <mat-stepper #stepper *ngIf="inOrder">
               <mat-step [stepControl]="firstFormGroup!" errorMessage="Full Name is required.">
                 <form [formGroup]="firstFormGroup!">
@@ -60,7 +62,7 @@
                   <ng-template matStepLabel>Fill out your address</ng-template>
                   <mat-form-field appearance="fill">
                     <mat-label>Address</mat-label>
-                    <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="secondCtrl"
+                    <input matInput placeholder="1 Dizengoff, Tel-Aviv" formControlName="secondCtrl"
                           required>
                   </mat-form-field>
                   <div>
@@ -76,7 +78,7 @@
                     <ng-template matStepLabel>Fill out your phone number</ng-template>
                     <mat-form-field appearance="fill">
                       <mat-label>Phone Number</mat-label>
-                      <input matInput placeholder="+972543435697" formControlName="phoneCtrl"
+                      <input matInput placeholder="0543435697" formControlName="phoneCtrl"
                             required>
                     </mat-form-field>
                     <div>
