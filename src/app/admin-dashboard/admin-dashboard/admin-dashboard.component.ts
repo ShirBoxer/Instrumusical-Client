@@ -53,9 +53,7 @@ export class AdminDashboardComponent implements OnInit, OnDestroy {
   private getTabByName(_tabName: string): TAB {
     switch (_tabName) {
       case "users": return TAB.USERS;
-      case "categories": return TAB.CATEGORIES;
       case "instruments": return TAB.INSTRUMENTS;
-      case "stores": return TAB.STORES;
       case "orders": return TAB.ORDERS;
       default: return TAB.UNKNOWN;
     }

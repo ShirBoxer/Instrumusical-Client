@@ -8,29 +8,24 @@
         <mat-icon>person</mat-icon>
         Users
     </mat-button-toggle>
-    <!-- <mat-button-toggle value="categories" (click)="switchTab('categories')">
-        <mat-icon>category_outline</mat-icon>
-        Categories
-    </mat-button-toggle> -->
     <mat-button-toggle value="instruments" (click)="switchTab('instruments')">
         <mat-icon>music_note</mat-icon>
         Instruments
     </mat-button-toggle>
-    <!-- <mat-button-toggle value="stores" (click)="switchTab('stores')">
+     <!-- <mat-button-toggle value="orders" (click)="switchTab('orders')">
         <mat-icon>store</mat-icon>
-        Stores
-    </mat-button-toggle> -->
-    <!-- <mat-button-toggle value="orders" (click)="switchTab('orders')">
-        <mat-icon>list</mat-icon>
         Orders
     </mat-button-toggle> -->
+  
 </mat-button-toggle-group>
 <div id="admin-content">
     <div *ngIf="matchTab('users')"><app-user-list></app-user-list></div>
     <div *ngIf="matchTab('categories')">categories</div>
     <div *ngIf="matchTab('instruments')"><app-instrument-list ></app-instrument-list></div>
     <div *ngIf="matchTab('stores')">stores</div>
-    <div *ngIf="matchTab('orders')">orders</div>
+    <!-- <div *ngIf="matchTab('orders')">orders</div> -->
+        
+    
     <p></p>
     <p></p>
     <p></p>
