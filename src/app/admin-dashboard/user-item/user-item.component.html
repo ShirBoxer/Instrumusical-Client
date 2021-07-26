@@ -1,13 +1,13 @@
 <!-- <p>user-item works!</p> -->
 <div class="card" *ngIf="user">
     <div>
-        <mat-icon *ngIf="!user.isAdmin">delete</mat-icon> <span class="lspan">{{user.name}}</span>
+        <mat-icon *ngIf="!user.isAdmin" (click)="deleteUser(this.user._id)">delete</mat-icon> <span class="lspan">{{user.name}}</span>
     </div>
     <div>
         <span class="sspan">{{user.email}}</span>
     </div>
     <div>
-        <button *ngIf="!user.isAdmin" mat-button>Adminate</button>
+        <button *ngIf="!user.isAdmin" mat-button (click)="adminate(this.user._id)">Adminate</button>
     </div>
 
 </div>

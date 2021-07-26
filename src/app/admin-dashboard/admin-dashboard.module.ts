@@ -6,8 +6,12 @@ import { UserListComponent } from './user-list/user-list.component';
 import { UserItemComponent } from './user-item/user-item.component';
 import { InstrumentListComponent } from './instrument-list/instrument-list.component';
 import { InstrumentItemComponent } from './instrument-item/instrument-item.component';
-import { FormsModule, NgModel, NgForm } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { environment } from 'src/environments/environment';
 
+
+const config: SocketIoConfig = { url: environment.adminUrl, options: {} };
 
 
 @NgModule({
@@ -21,7 +25,8 @@ import { FormsModule, NgModel, NgForm } from '@angular/forms';
   imports: [
     CommonModule,
     MaterialsModule,
-    FormsModule //, NgModel, NgForm
+    FormsModule,
+    SocketIoModule.forRoot(config)
   ]
 })
 export class AdminDashboardModule {

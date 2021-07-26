@@ -21,6 +21,8 @@ const GUITARS = 'guitars';
 const DRUMS = 'drums';
 const KEYS = 'keys';
 const USER = 'user';
+const ADMIN ='admin';
+const ADMIN_TOKEN = 'm4z1edzxh283ylhrazs6';
 const DJ_GEAR = 'dj-gear';
 const ACCESSORIES = 'accessories';
 const JWT_NAME = 'instrumusical-token';
@@ -44,8 +46,11 @@ const BAR = "bar";
 const SCATTER = "scatter";
 const PIE = "pie"
 export const environment = {
-
+  
   production: false,
+  
+  baseUrl: BASE_URL,
+
   allInstrumentsUrl: BASE_URL + '/' + INSTRUMENTS + '/' + ALL,
   barDataUrl: BASE_URL + '/' + DATA + '/' + BAR + '/' + KEYWORDS,
   scatterDataUrl: BASE_URL + '/' + DATA + '/' + SCATTER,
@@ -60,6 +65,8 @@ export const environment = {
   searchUrl: BASE_URL + '/' + SEARCH,
   filterSearchUrl: BASE_URL + '/' + SEARCH + '/' + FILTER_SEARCH,
   brandsUrl: BASE_URL + '/' + INSTRUMENTS + '/' + BRANDS,
+  adminUrl: `${BASE_URL}/${ADMIN}/${ADMIN_TOKEN}`,
+  
 
   storeUrl: BASE_URL + '/' + STORE,
   
