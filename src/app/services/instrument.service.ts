@@ -78,11 +78,17 @@ export class InstrumentService {
   }
 
 
-  countOfReviews() : Observable<MapReduce>{
-    return this.http.get<MapReduce>(environment.countReviews);
-  }
+ 
   getBestOffers() : Observable<Instrument[]>{
     return this.http.get<Instrument[]>(environment.bestOffersUrl);
 
+  }
+
+  deleteInstrument(id: any):void{
+    this.http.delete<void>(environment.instrumentsUrl,{
+      params: {
+        Key: id
+      }
+    } );
   }
 }

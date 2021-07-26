@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Instrument } from '../models/instrument';
+import { MapReduce } from '../models/map-reduce';
 import { User } from '../models/user';
 import { TokenPayload } from '../services/user.service';
 
@@ -53,5 +54,9 @@ export class AdminServiceService {
   // addOrder(_order: Order){}
   // updateOrder(_id, _newOrder){}  
   // deleteOrder(_id){}
+
+  countOfReviews() : Observable<MapReduce>{
+    return this.http.get<MapReduce>(environment.countReviews);
+  }
 
 }

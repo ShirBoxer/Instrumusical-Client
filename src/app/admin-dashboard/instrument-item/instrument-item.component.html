@@ -4,7 +4,7 @@
         <mat-panel-title>{{instrument.category}}</mat-panel-title>
         <mat-panel-title>{{instrument.brand}}</mat-panel-title>
     </mat-expansion-panel-header>
-    <img src="assets/img/guitar1.jpg" class="imgContainer">
+    <img [src]= instrument.imgPath class="imgContainer">
     <p>{{instrument.description}}</p>
     <p>
         <span class="info">in stock:</span>
@@ -14,7 +14,7 @@
     </p>
     <mat-action-row>
         <!-- <button mat-button>Edit</button> -->
-        <button mat-raised-button color="warn">Delete</button>
+        <button mat-raised-button (click)="deleteInstrument()" color="warn" >Delete</button>
     </mat-action-row>
     <mat-expansion-panel>
         <mat-expansion-panel-header>
@@ -22,7 +22,7 @@
         </mat-expansion-panel-header>
         <div *ngFor="let review of instrument.reviews">
             <div class="reviewItem" >
-                <button color="warn" mat-button>DEL</button>
+               
                 <span>{{review}}</span>
             </div>
             <hr color="red">

@@ -23,13 +23,14 @@ export class InstrumentListComponent implements OnInit {
   @Input() priceHolder!: number;
   @Input() soldHolder!: number;
   @Input() imgPathHolder!: string;
+  
 
   constructor(
       private instService: InstrumentService,
       private admin: AdminServiceService ) {
 
     this.inst = this.getInstrumentService();
-    this.inst.getTopSellers().subscribe(_data => {
+    this.inst.getAllInstruments().subscribe(_data => {
       this.instruments = _data;
     });
 
@@ -68,7 +69,7 @@ export class InstrumentListComponent implements OnInit {
       category: this.categoryHolder,
       brand: this.brandHolder,
       description: this.descriptionHolder,
-      imgPath: `assets/img/${this.imgPathHolder}.jpg`,
+      imgPath: this.imgPathHolder,
       price: this.priceHolder,
       quantity: this.quantityHolder,
       reviews: [],

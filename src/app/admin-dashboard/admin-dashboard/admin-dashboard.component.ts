@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
+import { AdminServiceService } from '../admin-service.service';
 
 enum TAB{
   UNKNOWN=0,
@@ -19,10 +20,14 @@ export class AdminDashboardComponent implements OnInit {
 
   auth: UserService;
   currentTab: TAB;
+  totRevCount: number;
 
-  constructor(private authService: UserService) {
-    this.auth = authService;
+  constructor( 
+    private admin : AdminServiceService,
+    private authService: UserService) {
+    this.auth = this.authService;
     this.currentTab = TAB.INSTRUMENTS;
+    this.totRevCount = -1;
   }
   
   ngOnInit(): void {} 
@@ -45,5 +50,11 @@ export class AdminDashboardComponent implements OnInit {
       case "orders": return TAB.ORDERS;
       default: return TAB.UNKNOWN;
     }
+  }
+
+  public countOfReviews(){
+    this.admin.countOfReviews().subscribe((respond)=>{
+      alert(`the total amount of reviews is : ${JSON.stringify(respond.value)}`);
+    });
   }
 }

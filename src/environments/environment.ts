@@ -2,6 +2,7 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+
 const BASE_URL = 'http://localhost:8003';
 const INSTRUMENTS = 'instruments';
 
@@ -36,7 +37,9 @@ const PEARL = 'pearl';
 const CASIO = 'casio';
 const FENDER = 'fender';
 
-const COUNT_REVIEWS= "totalValue";
+const COUNT_REVIEWS= "totalReviews";
+
+const CHEAPEST = "cheapest";
 
 
 const STORE ='store';
@@ -56,7 +59,7 @@ export const environment = {
   scrapeUrl: BASE_URL + '/' + SEARCH + '/' + SCRAPE,
   scrapeOne: BASE_URL + '/' + SEARCH + '/' + SCRAPE + '/' + ONE,
 
-  countReviews:BASE_URL + '/' +COUNT_REVIEWS,
+  countReviews:BASE_URL + '/'+INSTRUMENTS+'/' +COUNT_REVIEWS,
 
   userUrl: BASE_URL + '/' + USER,
   instrumentsUrl: `${BASE_URL}/${INSTRUMENTS}`,
@@ -85,7 +88,7 @@ export const environment = {
   pearlUrl: BASE_URL + '/' + BRANDS + '/' + PEARL,
   casioUrl: BASE_URL + '/' + BRANDS + '/' + CASIO,
   fenderUrl: BASE_URL + '/' + BRANDS + '/' + FENDER,
-
+  bestOffersUrl: BASE_URL + '/' +SEARCH + CHEAPEST,
 };
 
 /*

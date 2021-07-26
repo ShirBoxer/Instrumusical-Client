@@ -27,7 +27,10 @@
 </mat-button-toggle-group>
 <div id="admin-content">
     <div *ngIf="matchTab('users')"><app-user-list></app-user-list></div>
-    <div *ngIf="matchTab('categories')">categories</div>
+    <div *ngIf="matchTab('categories')">
+        <button (click)="countOfReviews()">click</button>
+        <span>{{totRevCount}}</span>
+    </div>
     <div *ngIf="matchTab('instruments')"><app-instrument-list></app-instrument-list></div>
     <div *ngIf="matchTab('stores')">stores</div>
     <div *ngIf="matchTab('orders')">orders</div>
