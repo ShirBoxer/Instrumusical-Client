@@ -11,22 +11,54 @@
 
 .addbtnContainer{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    
+    background-color: RGB(30,30,30);
+    padding: 15px;
 }
 
 #addPanel{
     background-color: RGB(30,30,30);
+    display: flex;
+    justify-content: center;
 }
-
+.listDiv{
+    background-color: RGB(30,30,30);
+    height: 100%;
+    padding: 50px;
+}
 mat-form-field{
     margin: 20px;
     color: white;
 }
 
 .narrow{
-    width: 50px;
+    width: 80px;
 }
-.submit{
+
+.lnarrow{
+    width: 120px;
+}
+
+.outer-hr{
+    color: darkred;
+    background-color: white;
+}
+
+.mainAdminContainer{
+    height: 100%;
+
+}
+
+.count{
+    color: white;
+    font-size: large;
     display: flex;
-    flex-flow: end;
+    justify-content: space-around;
+    width: 200px;
+    align-items: center;
+}
+
+.innerCount{
+    font-size: xx-large;
 }

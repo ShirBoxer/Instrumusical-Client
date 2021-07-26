@@ -11,7 +11,7 @@
 }
 
 mat-button-toggle{
-    width: 20%;
+    width: 50%;
     color: red;
     border: darkred solid 5px;
 }
@@ -20,3 +20,4 @@ mat-button-toggle{
     /* background-color:darkblue; */
     width: 100%;
 }
+

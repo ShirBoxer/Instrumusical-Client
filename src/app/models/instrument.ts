@@ -1,5 +1,5 @@
 export interface Instrument{
-    _id?: number,
+    _id?: string,
     name: string,
     brand: string,
     category: string,

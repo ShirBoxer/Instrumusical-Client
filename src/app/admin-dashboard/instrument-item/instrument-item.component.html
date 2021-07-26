@@ -3,18 +3,18 @@
         <mat-panel-title>{{instrument.name}}</mat-panel-title>
         <mat-panel-title>{{instrument.category}}</mat-panel-title>
         <mat-panel-title>{{instrument.brand}}</mat-panel-title>
+        <mat-panel-title>{{instrument.price}}$</mat-panel-title>
     </mat-expansion-panel-header>
     <img src="assets/img/guitar1.jpg" class="imgContainer">
     <p>{{instrument.description}}</p>
     <p>
         <span class="info">in stock:</span>
-        <mat-icon>remove</mat-icon>
         <span class="amount">{{instrument.quantity}}</span>
-        <mat-icon>add</mat-icon>
+
     </p>
     <mat-action-row>
         <!-- <button mat-button>Edit</button> -->
-        <button mat-raised-button color="warn">Delete</button>
+        <button mat-raised-button color="warn" (click)="deleteInstrument()">Delete</button>
     </mat-action-row>
     <mat-expansion-panel>
         <mat-expansion-panel-header>
