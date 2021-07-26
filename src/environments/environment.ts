@@ -39,7 +39,7 @@ const PEARL = 'pearl';
 const CASIO = 'casio';
 const FENDER = 'fender';
 
-const COUNT_REVIEWS= "totalValue";
+const COUNT_REVIEWS= "totalReviews";
 
 
 const STORE ='store';
@@ -54,7 +54,7 @@ export const environment = {
   
   baseUrl: BASE_URL,
 
-
+  countReviewsUrl: `${BASE_URL}/${INSTRUMENTS}/${COUNT_REVIEWS}`,
   bestOffersUrl : BASE_URL + '/' + SEARCH + '/' + CHEAPEST,
   allInstrumentsUrl: BASE_URL + '/' + INSTRUMENTS + '/' + ALL,
   barDataUrl: BASE_URL + '/' + DATA + '/' + BAR + '/' + KEYWORDS,

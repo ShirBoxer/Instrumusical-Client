@@ -8,10 +8,10 @@
             <mat-icon *ngIf="!additionPanelDisplay">add</mat-icon>
             {{(!additionPanelDisplay?'Add an instrument':'Close')}}
         </button>
-        <span class="count">
-            Value: 149,853$
-            <!-- <div class="innerCount">put itais map reduce value here</div> -->
-        </span>
+        <button mat-button (click)="getValue()" class="count">
+            Reviews Count: {{totalValue}}
+        </button>
+        
     </div>
 
 

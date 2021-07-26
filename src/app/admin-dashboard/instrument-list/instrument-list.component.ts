@@ -17,6 +17,7 @@ export class InstrumentListComponent implements OnInit, OnDestroy {
   public instruments: Instrument[];
   subscription!: Subscription;
 
+  totalValue: number = 0;
   public additionPanelDisplay: boolean;
 
   @Input() nameHolder!: string;
@@ -36,12 +37,12 @@ export class InstrumentListComponent implements OnInit, OnDestroy {
     this.instService.getAllInstruments().subscribe(_data => {
       this.instruments = _data;
     });
+
     this.additionPanelDisplay = false;
   }
 
   ngOnInit(): void {
-    this.subscription = this.admin.currentList.subscribe( _newList =>{
-      // alert(`newList length: ${_newList.length}`);
+    this.subscription = this.admin.currentList.subscribe(_newList => {
       this.instruments = _newList;
     })
     this.resetPanel();
@@ -74,7 +75,8 @@ export class InstrumentListComponent implements OnInit, OnDestroy {
       category: this.categoryHolder,
       brand: this.brandHolder,
       description: this.descriptionHolder,
-      imgPath: `assets/img/${this.imgPathHolder}.jpg`,
+      // imgPath: `assets/img/${this.imgPathHolder}.jpg`,
+      imgPath: this.imgPathHolder,
       price: this.priceHolder,
       quantity: this.quantityHolder,
       reviews: [],
@@ -97,5 +99,12 @@ export class InstrumentListComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy() {}
+  getValue() {
+    this.admin.countOfReviews().subscribe((_response: any) => {
+      this.totalValue = _response.value;
+    });
+  }
+
+
+ngOnDestroy() { }
 }
