@@ -16,8 +16,8 @@ export class SearchComponent implements OnInit {
   @Input() priceValue: string = '';
 
   categoriesList: string[] = ['','Guitars','Drums','Keys','DJGear','Accessories'];
-  brandsList: string[] =  ['','Yamaha','Casio','Gibson'];
-  pricesList: string[] =  ['','0$-250$','250$-500$','500$-1000$','1000$-2000$'];
+  brandsList: string[] =  ['','Yamaha','Casio','Gibson',"Taylor","Roland","DW","Pearl"];
+  pricesList: string[] =  ['','0$-600$','600$-1000$','1000$-2000$','2000$+'];
   
   constructor(private activeRoute: ActivatedRoute, private instrumentsService: InstrumentService) {}
 

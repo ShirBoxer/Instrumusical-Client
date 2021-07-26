@@ -63,7 +63,7 @@ export class BarComponent implements OnInit {
           this.categoriesFreq.keys += 1;
           break;
         }
-        case 'dj-gear':{
+        case 'dj-gears':{
           this.categoriesFreq['dj-gear'] += 1;
           break;
         }
