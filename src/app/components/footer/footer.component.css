@@ -1,13 +1,16 @@
+.wraper{
+  background-color:black;
+}
+
+
 .container{
     color: white;
     background-color: black;
     display:flex;
     justify-content:space-around;
-    align-self: flex-end;
-    position:fixed;
-    bottom:0;
-    width: 100%;
-    height: 80px;
+    align-self: auto;
+    bottom: 0;
+    width:100%;
 }
 .title-txt{
     color: white;

@@ -15,6 +15,7 @@ const SCRAPE = 'scrape';
 const ONE = 'one';
 const KEYWORDS = 'keywords';
 const ALL = 'all';
+const CHEAPEST = 'cheapest';
 
 // Categories //
 const GUITARS = 'guitars';
@@ -38,6 +39,8 @@ const PEARL = 'pearl';
 const CASIO = 'casio';
 const FENDER = 'fender';
 
+const COUNT_REVIEWS= "totalValue";
+
 
 const STORE ='store';
 
@@ -51,6 +54,8 @@ export const environment = {
   
   baseUrl: BASE_URL,
 
+
+  bestOffersUrl : BASE_URL + '/' + SEARCH + '/' + CHEAPEST,
   allInstrumentsUrl: BASE_URL + '/' + INSTRUMENTS + '/' + ALL,
   barDataUrl: BASE_URL + '/' + DATA + '/' + BAR + '/' + KEYWORDS,
   scatterDataUrl: BASE_URL + '/' + DATA + '/' + SCATTER,
@@ -58,6 +63,8 @@ export const environment = {
   JWT_NAME: JWT_NAME,
   scrapeUrl: BASE_URL + '/' + SEARCH + '/' + SCRAPE,
   scrapeOne: BASE_URL + '/' + SEARCH + '/' + SCRAPE + '/' + ONE,
+
+  countReviews:BASE_URL + '/' +COUNT_REVIEWS,
 
   userUrl: BASE_URL + '/' + USER,
   instrumentsUrl: `${BASE_URL}/${INSTRUMENTS}`,

@@ -3,7 +3,6 @@ import { Instrument } from 'src/app/models/instrument';
 import { CartService } from 'src/app/services/cart.service';
 import { OrderService} from 'src/app/services/order.service';
 import {Order} from 'src/app/models/order';
-//MOVE
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 import { UserService } from 'src/app/services/user.service';
@@ -21,8 +20,8 @@ export class CartComponent implements OnInit {
   instruments: Instrument[] = [];
   quantities: number[] = [];
   totalPrice: number = 0;
+  inOrder: boolean = false;
 
-  //view 
   firstFormGroup!: FormGroup;
   secondFormGroup!: FormGroup;
   phoneFormGroup!: FormGroup;
@@ -32,16 +31,14 @@ export class CartComponent implements OnInit {
     private orderService: OrderService,
     private userService: UserService,
     private _formBuilder: FormBuilder) { 
-    this.instruments = this.cartService.getItems(); 
-    this.quantities = this.cartService.getCounter();
-    this.totalPrice = this.cartService.getTotalPrice();
+    this.updateData();
   }
-  ngOnChanges(): void {  ///TODO change all!!
-    this.instruments = this.cartService.getItems(); 
-    this.quantities = this.cartService.getCounter();
-    this.totalPrice = this.cartService.getTotalPrice();
+
+  ngOnChanges(): void {  
+    this.updateData();
 
   }
+
   ngOnInit(): void {
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
@@ -56,12 +53,40 @@ export class CartComponent implements OnInit {
 
   }
 
+  toOrder(): void {   this.inOrder = true; }
+ 
+  updateData(): void{
+    this.instruments = this.cartService.getItems();
+    this.quantities = this.cartService.getCounter();
+    this.totalPrice = this.cartService.getTotalPrice();
+  }
+
+  removeFromCart(item: Instrument){
+    let isEqual = (item: Instrument)=>{
+      return item._id == item._id;
+    };
+    let index = this.instruments.findIndex(isEqual);
+    this.cartService.removeAllFromCart(item);
+    this.updateData();
+  }
+  
+  addOne(item: Instrument){
+    this.cartService.addToCart(item);
+    this.updateData();
+  }
+  decreaseOne(item: Instrument){
+    this.cartService.removeFromCart(item);
+    this.updateData();
+  }
+
+ ///    Order   ///
   newOrder(): void {
     let user = this.userService.getUserDetails()!._id;
     let supplyTime = new Date();
     supplyTime.setDate(supplyTime.getDate() + 7);
 
     let params = {
+      numOfProducts: this.quantities,
       owner: user,
       orderDate: new Date(),
       supplyDate: supplyTime,
@@ -74,38 +99,18 @@ export class CartComponent implements OnInit {
     this.orderService.addOrder(params)
       .subscribe((o : Order) => {
         //the new order 
+        this.inOrder = false;
+        this.instruments = [];
+        this.quantities = []
+        // cleaning the cart
+        this.cartService.clearCart();
+        this.updateData();    
         alert(`Yay!! your order has been submitted, The estimated time of arrival time: ${o.supplyDate}`);
     });
-    //console.log(this.firstFormGroup.getRawValue().firstCtrl);
-    //console.log(this.phoneFormGroup.getRawValue().phoneCtrl);
 
+   
 
+    
   }
-
-
-  removeFromCart(item: Instrument){
-    let isEqual = (item: Instrument)=>{
-      return item._id == item._id;
-    };
-    let index = this.instruments.findIndex(isEqual);
-    this.cartService.removeAllFromCart(item);
-    this.instruments = this.cartService.getItems();
-    this.quantities = this.cartService.getCounter();
-    this.totalPrice = this.cartService.getTotalPrice();
-  }
-  
-  addOne(item: Instrument){
-    this.cartService.addToCart(item);
-    this.instruments = this.cartService.getItems(); 
-    this.quantities = this.cartService.getCounter();
-    this.totalPrice = this.cartService.getTotalPrice();
-  }
-  decreaseOne(item: Instrument){
-    this.cartService.removeFromCart(item);
-    this.instruments = this.cartService.getItems(); 
-    this.quantities = this.cartService.getCounter();
-    this.totalPrice = this.cartService.getTotalPrice();
-  }
-
 
 }

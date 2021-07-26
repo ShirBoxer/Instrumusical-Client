@@ -1,25 +1,104 @@
 <app-main-header></app-main-header>
-
-<mat-grid-list *ngIf="topSellersInstruments && topSellersInstruments.length == 4" cols="12">
-
-    <mat-grid-tile  rowspan="4" colspan="5">
-        <img [src]="topSellersInstruments[0].imgPath">
-    </mat-grid-tile>
-
-    <mat-grid-tile rowspan="2" colspan="5">
-        <img [src]="topSellersInstruments[1].imgPath">
-    </mat-grid-tile>
-
-    <mat-grid-tile rowspan="4" colspan="2">
-        <app-user-card></app-user-card>
-    </mat-grid-tile>
-
-    <mat-grid-tile rowspan="2" colspan="3">
-        <img [src]="topSellersInstruments[2].imgPath">
-    </mat-grid-tile>
+<div class="wraper">
+  <div class="main">
+    <ngb-carousel
+    [showNavigationArrows]="true" 
+    [showNavigationIndicators]="true"
+    [interval]="3000"
+    [keyboard]="true"
+    [pauseOnHover]="true"
+    [wrap]="true"
+    [activeId]="'sliderThree'"
+    >
     
-    <mat-grid-tile rowspan="2" colspan="2">
-        <img [src]="topSellersInstruments[3].imgPath">
-    </mat-grid-tile>
+      
+      <ng-template class="ngtemplate" ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img class="img1" src="https://media.istockphoto.com/photos/instruments-in-white-wooden-background-picture-id1219335974?k=6&m=1219335974&s=612x612&w=0&h=hn0-enYpWGSsliZmZZXQRsPvLV_AN4N80o40LalGVrA=" alt="Random first slide">
+          <div class="carousel-caption" >
+            <h1>Hand Craft Guitars</h1>
+          </div>
+        </div>
+
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img class="img1" src="https://media.istockphoto.com/photos/musical-instruments-picture-id894058154?k=6&m=894058154&s=612x612&w=0&h=Uti_UIlKVZA-FMB5QKOuK6QvLfUIeJ1EUNyrn7cvygA=" alt="Random second slide" >
+        </div>
+        <div class="carousel-caption">
+          <h3>Music is all you need!</h3>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img class="img1" src="https://wallpaperaccess.com/full/1470084.jpg" alt="Random third slide">
+        </div>
+        <div class="carousel-caption">
+          <h3>Drums Energy</h3>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img class="img1" src="https://img.aelieve.com/wYiwMmE-8_gNcMB5/w:auto/h:auto/q:74/https://cdn.aelieve.com/a474298f-musical-instruments-equipment.jpg" alt="Random third slide">
+        </div>
+        <div class="carousel-caption">
+          <h3>Music is the wine that fills the cup of silence</h3>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+
+  
+  <span class="footerspan"></span>
+  <h1 class="topSell">Our Top Seller</h1>
+  <div class="underLine"></div>
+
+  <mat-grid-list *ngIf="topSellersInstruments && topSellersInstruments.length == 9" cols="3" gutterSize="15px" rowHeight="650px">
+    <mat-grid-tile colspan="1" *ngFor="let obj of topSellersInstruments">
+        <app-instrument-card [instrument]="obj"></app-instrument-card>
+      </mat-grid-tile>
+  </mat-grid-list>
+
+
+  <div class="row">
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <h2>Itai Blumenkrantz</h2>
+        <p class="title">Developer</p>
+        <p>itai64@gmail.com</p>
+      </div>
+    </div>
+  </div>
     
-</mat-grid-list>
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <h2>Shir Boxer</h2>
+        <p class="title">Developer</p>
+        <p>shirboxer@gmail.com</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+  <div class="card">
+    <div class="container">
+      <h2>Dan Shmirer</h2>
+      <p class="title">Developer</p>
+      <p>dshmirer@gmail.com</p>
+    </div>
+  </div>
+</div>
+  
+ <div class="column">
+  <div class="card">
+    <div class="container">
+      <h2>Mike Lasry</h2>
+      <p class="title">Developer</p>
+      <p>mikelasry@gmail.com</p>
+    </div>
+  </div>
+  </div>
+  </div>
+</div>

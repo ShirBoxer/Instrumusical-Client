@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Instrument } from '../models/instrument';
+import { MapReduce } from '../models/map-reduce';
 import { ScrapeInstrument } from '../models/scrape-instrument';
 
 @Injectable({
@@ -62,6 +63,7 @@ export class InstrumentService {
         }
       });
   }
+
   getFilterResults(filters : string[]) {
     return this.http.get<Instrument[]>(environment.filterSearchUrl,
       {
@@ -70,7 +72,17 @@ export class InstrumentService {
         }
       });
   }
+  
   getRandomSetence() : Observable<ScrapeInstrument[]>{
     return this.http.get<ScrapeInstrument[]>(environment.scrapeOne);
+  }
+
+
+  countOfReviews() : Observable<MapReduce>{
+    return this.http.get<MapReduce>(environment.countReviews);
+  }
+  getBestOffers() : Observable<Instrument[]>{
+    return this.http.get<Instrument[]>(environment.bestOffersUrl);
+
   }
 }

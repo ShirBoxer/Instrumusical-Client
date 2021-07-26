@@ -13,12 +13,10 @@ import { Instrument } from '../models/instrument';
 export class OrderService {
 
   constructor(private http: HttpClient) { }
-  // {Date.now(),user, new Date(),
-  //   supplyTime,this.secondFormGroup.getRawValue().secondCtrl,
-  //   this.phoneFormGroup.getRawValue().phoneCtrl,this.totalPrice, this.instruments}
+ 
 
-  addOrder(orderParams: { owner: string; orderDate: Date; supplyDate: Date; address: any; phoneNum: any; totalPrice: number; products: Instrument[]; }): Observable<Order>{
-    
+  addOrder(orderParams: { numOfProducts: number[]; owner: string; orderDate: Date; supplyDate: Date; address: any; phoneNum: any; totalPrice: number; products: Instrument[]; }): Observable<Order>{
+    console.log(orderParams);
     return this.http.post<Order>(environment.orderUrl,{
       params :orderParams
     });

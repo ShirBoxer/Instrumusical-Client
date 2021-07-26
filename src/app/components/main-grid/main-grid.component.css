@@ -1,15 +1,58 @@
-.mat-grid-tile{
-    background-color :rgb(9, 56, 21);
-}
-img{
-    width : 100%;
-    height : 100%;
+
+
+.img1{
+  width: 100%;
+  height: 400px;
 }
 
+.wraper{
+  background-color:rgb(209, 203, 211);
+}
 app-main-header{
     width : 100%;
     height : 30px;
 }
 
+.main{
+  padding-bottom: 100px;
+  width : 90%;
+  padding-left: 10%;
+}
+
+.carousel-control-prev-icon{
+  background-image: url('https://apufpel.com.br/assets/img/seta_prim.png')
+}
+.carousel-control-next-icon{
+ background-image: url('https://apufpel.com.br/assets/img/seta_ult.png')
+}
 
 
+.column{
+  width :22%;
+  margin-left: 38px;
+  margin-bottom: 20px;
+  border:rgb(139, 118, 111);
+  border-style: dashed;
+  border-radius: 30px;
+}
+
+.topSell {
+  font-family: fantasy;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 80px;
+  color:rgb(24, 20, 20);
+  margin-bottom: 60px;
+  text-shadow: 0 0 3px #ffffff, 0 0 5px #798b85;
+  /* flex-direction: column;
+  border-radius: 6px; */
+
+
+}
+.underLine{
+  border-bottom: 3px solid #e4ecf1;
+  width : 90%;
+  margin-bottom: 20px;
+  margin-left: 5%;
+
+}

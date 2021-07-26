@@ -1,9 +1,38 @@
 .mat-toolbar{
-    background-color:rgb(127, 173, 135);
+  background-color:rgb(127, 173, 135);
 }
 .example-icon {
-    padding: 0 14px;
+  padding: 0 14px;
+}
+
+
+.btn{
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #3300;
+  border: none;
+  color: white;
+  padding: 9px 15px;
+  margin-left: 5px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 12px;
+}
+.btn:hover{
+  background-color: rgb(99, 221, 129); /* Green */
+  padding: 0 14px;
   }
   .example-spacer {
     flex: 1 1 auto;
   }
+  
+.mat-grid-list  {
+  padding-bottom: 200px;
+  background-color:rgb(215, 235, 217);
+}
+
+app-instrument-card{
+  background-color:rgb(255, 255, 255);;
+  border-radius: 5%;
+  box-shadow: 10px 25px 50px rgba(black, 0.5);
+}
