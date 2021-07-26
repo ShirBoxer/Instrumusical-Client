@@ -3,7 +3,8 @@ import { Injectable, OnDestroy, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Instrument } from '../models/instrument';
-import { User } from '../models/user';
+import { MapReduce } from '../models/map-reduce';
+
 
 @Injectable({
   providedIn: 'root'
@@ -78,14 +79,19 @@ export class AdminServiceService implements OnInit {
     return false;
   }
 
+  public countOfReviews(): Observable<MapReduce>{  
+    return this.http.get<MapReduce>(environment.countReviewsUrl);
+  }
 
-  // Instruments
+  
   public getInstruments(): Observable<Instrument[]> {
     return this.http.get<Instrument[]>(`${this.instrumentsUrl}/all`);
   }
+
   public addInstrument(_instrument: Instrument): Observable<Instrument> {
     return this.http.post<Instrument>(this.instrumentsUrl, _instrument);
   }
+
   public deleteInstrument(_instrument: Instrument): Observable<any> {
     return this.http.delete(`${this.instrumentsUrl}/${_instrument._id}`);
   }
