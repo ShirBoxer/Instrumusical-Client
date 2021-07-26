@@ -36,3 +36,7 @@ app-instrument-card{
   border-radius: 5%;
   box-shadow: 10px 25px 50px rgba(black, 0.5);
 }
+
+.row{
+  padding-bottom:75px;
+}

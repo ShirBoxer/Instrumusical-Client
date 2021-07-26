@@ -1,16 +1,23 @@
 .wraper{
-  background-color:black;
+    background-color: black;
+    display:flex;
+    justify-content:space-around;
+    align-self: flex-end;
+    position:fixed;
+    bottom: 0;
+    width:100%;
 }
 
 
 .container{
-    color: white;
-    background-color: black;
-    display:flex;
-    justify-content:space-around;
-    align-self: auto;
-    bottom: 0;
-    width:100%;
+  color: white;
+  background-color: black;
+  display:flex;
+  justify-content:space-around;
+  align-self: flex-end;
+  /* position:fixed; */
+  bottom: 0;
+  width:100%;
 }
 .title-txt{
     color: white;
